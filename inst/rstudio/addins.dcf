@@ -1,0 +1,5 @@
+
+Name: structure of an object
+Description: str(currently_marked_text)
+Binding: str_addin
+Interactive: true

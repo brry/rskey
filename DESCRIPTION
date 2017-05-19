@@ -1,0 +1,11 @@
+Package: rstudioberry
+Title: Create custom Rstudio Keyboard shortcuts
+Version: 0.0.2
+Date: 2017-05-19
+Authors@R: person("Berry", "Boessenkool", email = "berry-b@gmx.de", role = c("aut", "cre"))
+Description: This creates custom Rstudio keyboard shortcuts like F3 for str.
+Imports: rstudioapi
+License: GPL(>= 2)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
