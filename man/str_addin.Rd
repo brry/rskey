@@ -4,7 +4,10 @@
 \alias{str_addin}
 \title{Rstudio str on F3}
 \usage{
-str_addin()
+str_addin(obj = selectobject())
+}
+\arguments{
+\item{obj}{Some R object. DEFAULT: Rstudio addin selected code}
 }
 \value{
 Nothing, prints as per \code{\link{str}}.
@@ -17,11 +20,13 @@ It can be very useful to bind this addin to F3, for example.
 \examples{
 # Go to Addins - browse Addins - Keyboard shortcuts - map "structure of an object" to F3
 
-
 }
 \references{
 Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
             To be added to \url{https://github.com/daattali/addinslist#readme}
+}
+\seealso{
+selectobject
 }
 \author{
 Berry Boessenkool, \email{berry-b@gmx.de}, May 2017

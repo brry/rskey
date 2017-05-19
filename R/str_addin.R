@@ -9,23 +9,15 @@
 #' @importFrom utils str
 #' @references Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
 #'             To be added to \url{https://github.com/daattali/addinslist#readme}
+#' @seealso selectobject
 #' @examples
 #' # Go to Addins - browse Addins - Keyboard shortcuts - map "structure of an object" to F3
 #'
+#' @param obj Some R object. DEFAULT: Rstudio addin selected code
 #'
-str_addin <- function() {
-  # Extract highlighted text from Active Document
-  context <- rstudioapi::getActiveDocumentContext()
-  text <- context$selection[[1]]$text
-
-  # Error Checking to Ensure Text is Selected
-  if(nchar(text) == 0) stop("Nothing is highlighted in the RStudio Source Editor.",
-                            "Please ensure an object is highlighted.", call.=FALSE)
-
-  # Execute code to account for cases where highlighed text is not an object, but code that generates one
-  object <- eval(parse(text=text))
-
+#'
+str_addin <- function(obj=selectobject()) {
   # return structure of object
-  str(object)
+  str(obj)
 
 }
