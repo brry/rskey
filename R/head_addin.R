@@ -7,7 +7,7 @@
 #' @export
 #' @importFrom utils head
 #' @references Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
-#' @seealso \code{\link{selectobject}}, \code{\link{str_addin}}
+#' @seealso \code{\link{selectobject}}, \code{\link{str_addin}}, \code{\link{View_addin}}
 #' @examples
 #' # Go to Addins - browse Addins - Keyboard shortcuts - map "head of an object" to F4
 #'
