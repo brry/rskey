@@ -26,7 +26,7 @@ Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
             To be added to \url{https://github.com/daattali/addinslist#readme}
 }
 \seealso{
-selectobject
+\code{\link{selectobject}}, \code{\link{head_addin}}
 }
 \author{
 Berry Boessenkool, \email{berry-b@gmx.de}, May 2017

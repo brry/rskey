@@ -3,3 +3,8 @@ Name: structure of an object
 Description: str(currently_marked_text)
 Binding: str_addin
 Interactive: true
+
+Name: head of an object
+Description: head(currently_marked_text)
+Binding: head_addin
+Interactive: true

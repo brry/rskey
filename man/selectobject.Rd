@@ -10,7 +10,7 @@ selectobject()
 The object
 }
 \description{
-Rstudio addin to create object from highlighted object name or code
+Rstudio addin to create object from highlighted object name orcode
 }
 \examples{
 # see str_addin

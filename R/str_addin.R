@@ -5,11 +5,10 @@
 #' @return Nothing, prints as per \code{\link{str}}.
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, May 2017
 #' @export
-#' @importFrom rstudioapi insertText
 #' @importFrom utils str
 #' @references Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
 #'             To be added to \url{https://github.com/daattali/addinslist#readme}
-#' @seealso selectobject
+#' @seealso \code{\link{selectobject}}, \code{\link{head_addin}}
 #' @examples
 #' # Go to Addins - browse Addins - Keyboard shortcuts - map "structure of an object" to F3
 #'
