@@ -1,6 +1,6 @@
 #' @title Select object
-#' @description Rstudio addin to create object from highlighted object name orcode
-#' @return The object
+#' @description Rstudio addin to create object from highlighted object name or code
+#' @return List with the (evaluated) object and the code generating it as a character string
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, May 2017
 #' @export
 #' @importFrom rstudioapi insertText
@@ -22,7 +22,14 @@ selectobject <- function() {
   # Execute code to account for cases where highlighed text is not an object, but code that generates one
   object <- eval(parse(text=text))
 
+  # selected code (short version for printing)
+  textshort <- text
+  w <- options("width")$width
+  if(nchar(textshort) > w-6 ) textshort <- paste0(substr(textshort,1,w-11), "[...]")
+  if(substring(textshort, nchar(textshort)) == "\n")
+    textshort <- substr(textshort, 1, nchar(textshort)-1)
+
   # return object
-  return(object)
+  return(invisible(list(object=object, code=textshort, fullcode=text)))
 
 }

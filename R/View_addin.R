@@ -15,7 +15,9 @@
 #'
 #'
 View_addin <- function(obj=selectobject()) {
+  message("View(", obj$code, ")")
   # open View window of object
+  obj <- obj$object
   if(!is.data.frame(obj)) try( obj <- as.data.frame(obj)  )
   View(obj)
 }

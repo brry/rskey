@@ -16,7 +16,8 @@
 #'
 #'
 str_addin <- function(obj=selectobject()) {
+  message("str(", obj$code, ")")
   # return structure of object
-  str(obj)
+  str(obj$object)
 
 }

@@ -15,7 +15,8 @@
 #'
 #'
 head_addin <- function(obj=selectobject()) {
+  message("head(", obj$code, ")")
   # return structure of object
-  head(obj)
+  head(obj$object)
 
 }
