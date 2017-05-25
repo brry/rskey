@@ -7,7 +7,7 @@
 #' @export
 #' @importFrom utils View
 #' @references Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
-#' @seealso \code{\link{selectobject}}, \code{\link{str_addin}}, \code{\link{head_addin}}
+#' @seealso \code{\link{selectobject}, \link{str_addin}, \link{head_addin}, \link{funSource}}
 #' @examples
 #' # Go to Addins - browse Addins - Keyboard shortcuts - map "View an object" to F6
 #'

@@ -25,7 +25,7 @@ It can be very useful to bind this addin to F6, for example.
 Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
 }
 \seealso{
-\code{\link{selectobject}}, \code{\link{str_addin}}, \code{\link{head_addin}}
+\code{\link{selectobject}, \link{str_addin}, \link{head_addin}, \link{funSource}}
 }
 \author{
 Berry Boessenkool, \email{berry-b@gmx.de}, May 2017

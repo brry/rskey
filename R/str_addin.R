@@ -8,7 +8,7 @@
 #' @importFrom utils str
 #' @references Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
 #'             To be added to \url{https://github.com/daattali/addinslist#readme}
-#' @seealso \code{\link{selectobject}}, \code{\link{head_addin}}, \code{\link{View_addin}}
+#' @seealso \code{\link{selectobject}, \link{head_addin}, \link{View_addin}, \link{funSource}}
 #' @examples
 #' # Go to Addins - browse Addins - Keyboard shortcuts - map "structure of an object" to F3
 #'
