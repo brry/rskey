@@ -13,3 +13,8 @@ Name: View an object
 Description: View(currently_marked_text)
 Binding: View_addin
 Interactive: true
+
+Name: funSource of an object
+Description: funSource(currently_marked_text)
+Binding: funSource
+Interactive: true
