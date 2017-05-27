@@ -21,7 +21,7 @@ Rstudio addin to create object from highlighted object name or code
 Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
 }
 \seealso{
-\code{\link{str_addin}, \link{head_addin}, \link{View_addin}, \link{funSource}}
+\code{\link{addins}, \link{funSource}}
 }
 \author{
 Berry Boessenkool, \email{berry-b@gmx.de}, May 2017
