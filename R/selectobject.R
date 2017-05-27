@@ -5,7 +5,7 @@
 #' @export
 #' @importFrom rstudioapi insertText
 #' @references Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
-#' @seealso \code{\link{str_addin}, \link{head_addin}, \link{View_addin}, \link{funSource}}
+#' @seealso \code{\link{addins}, \link{funSource}}
 #' @examples
 #' # see str_addin
 #'

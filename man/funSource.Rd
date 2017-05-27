@@ -29,7 +29,7 @@ open source code of a function in a loaded or specified package
 
 }
 \seealso{
-\code{\link{selectobject}, \link{str_addin}, \link{head_addin}, \link{View_addin}}
+\code{\link{selectobject}, \link{addins}}
 }
 \author{
 Berry Boessenkool, \email{berry-b@gmx.de}, Jan+Dec 2016, May 2017

@@ -6,7 +6,7 @@
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, Jan+Dec 2016, May 2017
 #' @importFrom utils browseURL find
 #' @export
-#' @seealso \code{\link{selectobject}, \link{str_addin}, \link{head_addin}, \link{View_addin}}
+#' @seealso \code{\link{selectobject}, \link{addins}}
 #' @examples
 #' # Go to Addins - browse Addins - Keyboard shortcuts - map "funSource of an object" to F7
 #'
