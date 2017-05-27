@@ -5,7 +5,7 @@ Rstudio addins to examine a highlighted object (or code creating an object).
 [digital-dharma](https://github.com/digital-dharma/RStudioAddIns).*
 
 I found it very useful to bind the addins to keyboard shortcuts like this (and
-[label](https://github.com/brry/rstudioberry/raw/master/inst/keyboardRlabels.ods){:target="_blank"}
+[label](https://github.com/brry/rstudioberry/raw/master/inst/keyboardRlabels.ods)
 them):
 
 * F3 - structure of an object - `str(selected_code)`
