@@ -5,7 +5,6 @@
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, May 2017
 #' @export
 #' @name addins
-#' @aliases str_addin head_addin View_addin
 #' @importFrom utils str head View
 #' @references Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
 #'             To be added to \url{https://github.com/daattali/addinslist#readme}
@@ -39,3 +38,28 @@ View_addin <- function(obj=selectobject()) {
   if(!is.data.frame(obj)) try( obj <- as.data.frame(obj)  )
   View(obj)
   }
+
+#' @export
+#' @rdname addins
+#'
+summary_addin <- function(obj=selectobject()) {
+  message("summary(", obj$code, ")")
+  summary(obj$object)
+  }
+
+#' @export
+#' @rdname addins
+#'
+dim_addin <- function(obj=selectobject()) {
+  message("dim(", obj$code, ")")
+  dim(obj$object)
+  }
+
+#' @export
+#' @rdname addins
+#'
+class_addin <- function(obj=selectobject()) {
+  message("class(", obj$code, ")")
+  class(obj$object)
+  }
+

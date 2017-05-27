@@ -5,8 +5,9 @@
 \alias{str_addin}
 \alias{head_addin}
 \alias{View_addin}
-\alias{head_addin}
-\alias{View_addin}
+\alias{summary_addin}
+\alias{dim_addin}
+\alias{class_addin}
 \title{Rstudio keyboard shortcuts on F-keys}
 \usage{
 str_addin(obj = selectobject())
@@ -14,6 +15,12 @@ str_addin(obj = selectobject())
 head_addin(obj = selectobject())
 
 View_addin(obj = selectobject())
+
+summary_addin(obj = selectobject())
+
+dim_addin(obj = selectobject())
+
+class_addin(obj = selectobject())
 }
 \arguments{
 \item{obj}{List containing \code{object} (some R object) \code{fullcode}

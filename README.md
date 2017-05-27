@@ -10,6 +10,9 @@ I found it very useful to bind the addins to keyboard shortcuts like this:
 * F4 - head of an object - `head(selected_code)`
 * F6 - View an object - `View(selected_code)`
 * F7 - funSource of an object - `funSource(selected_code)`
+* F8 - summary of an object - `summary(selected_code)`
+* F9 - dim of an object - `dim(selected_code)`
+* F10 - class of an object - `class(selected_code)`
 
 To use these keyboard shortcuts, install this package and follow the instructions below.
 

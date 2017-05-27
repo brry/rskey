@@ -18,3 +18,18 @@ Name: funSource of an object
 Description: funSource(currently_marked_text)
 Binding: funSource
 Interactive: true
+
+Name: summary of an object
+Description: summary(currently_marked_text)
+Binding: summary_addin
+Interactive: true
+
+Name: dim of an object
+Description: dim(currently_marked_text)
+Binding: dim_addin
+Interactive: true
+
+Name: class of an object
+Description: class(currently_marked_text)
+Binding: class_addin
+Interactive: true
