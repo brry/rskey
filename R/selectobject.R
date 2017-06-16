@@ -48,6 +48,9 @@ dd(5)
 # as.document_selection -> stop -> NULL
 #Error in obj$code : $ operator is invalid for atomic vectors
 
+# If I go to the source file (instead of Rstudio's code_browser) and press F3 there, I get:
+#Browse[1]> rstudioberry:::str_addin()
+#Error in eval(expr, envir, enclos) : object 'k' not found
 
 # Using eval.parent instead of eval does not help!
 }
