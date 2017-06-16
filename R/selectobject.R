@@ -17,7 +17,8 @@ selectobject <- function() {
 
   # Error Checking to Ensure Text is Selected
   if(nchar(text) == 0) stop("Nothing is highlighted in the RStudio Source Editor. ",
-                            "Please ensure an object is highlighted.", call.=FALSE)
+                            "Please ensure an object (or some code) is highlighted.",
+                            call.=FALSE)
 
   # Execute code to account for cases where highlighed text is not an object, but code that generates one
   object <- eval(parse(text=text))
@@ -32,4 +33,21 @@ selectobject <- function() {
   # return object
   return(invisible(list(object=object, code=textshort, fullcode=text)))
 
+}
+
+if(FALSE){
+# Currently, selectObject does not work when in a browser:
+dd <- function(k) {h <- k*2; browser(); h-3}
+dd(5)
+# try marking k and hitting F3
+# Error: 'x' should be a list of {range, text} pairs
+
+#tryStack error in NULL: 'x' should be a list of {range, text} pairs
+#-- tryStack sys.calls: dd -> rstudioberry:::str_addin -> message ->
+# selectobject -> tryStack -> rstudioapi::getActiveDocumentContext ->
+# as.document_selection -> stop -> NULL
+#Error in obj$code : $ operator is invalid for atomic vectors
+
+
+# Using eval.parent instead of eval does not help!
 }

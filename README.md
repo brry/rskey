@@ -29,6 +29,10 @@ devtools::install_github("brry/rstudioberry")
 * map the entries by clicking on the shortcut field and pressing e.g. `F3` (you could map as outlined above)
 
 
+### To-Do:
+Make `selectobject` work in a browsing environment, see 
+[note](https://github.com/brry/rstudioberry/blob/master/R/selectobject.R#L39).
+
 
 ### funSource
 `funSource` provides an easy option to open the source code of a function in a browser window.  
