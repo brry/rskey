@@ -10,7 +10,8 @@ selectobject()
 List with the (evaluated) object and the code generating it as a character string
 }
 \description{
-Rstudio addin to create object from highlighted object name or code
+Rstudio addin to create object from highlighted object name or code.
+Also works in browser mode, albeit not in the code_browser window.
 }
 \examples{
 # see str_addin
