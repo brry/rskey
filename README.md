@@ -52,7 +52,7 @@ It then opens two links in the default browser:
 The second window is a github search query needed quite often 
 because functions may be defined in a file with a different name.  
 Functions in the base R packages will be searched in the 
-[r-source/src/library](https://github.com/wch/r-source) repo.  
+[wch/r-source/src/library](https://github.com/wch/r-source/tree/trunk/src/library) repo.  
 
 #### examples
 Randomly selected example - `spatstat::rescale`:  
