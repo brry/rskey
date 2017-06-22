@@ -1,40 +1,40 @@
 
-Name: structure of an object
+Name: F3 structure of an object
 Description: str(currently_marked_text)
 Binding: str_addin
 Interactive: true
 
-Name: head of an object
+Name: F4 head of an object
 Description: head(currently_marked_text)
 Binding: head_addin
 Interactive: true
 
-Name: View an object
+Name: F6 View an object
 Description: View(currently_marked_text)
 Binding: View_addin
 Interactive: true
 
-Name: funSource of an object
+Name: F7 funSource of an object
 Description: funSource(currently_marked_text)
 Binding: funSource
 Interactive: true
 
-Name: summary of an object
+Name: F8 summary of an object
 Description: summary(currently_marked_text)
 Binding: summary_addin
 Interactive: true
 
-Name: dim of an object
+Name: F9 dim of an object
 Description: dim(currently_marked_text)
 Binding: dim_addin
 Interactive: true
 
-Name: class of an object
+Name: F10 class of an object
 Description: class(currently_marked_text)
 Binding: class_addin
 Interactive: true
 
-Name: plot an object
+Name: F11 plot an object
 Description: plot(currently_marked_text)
 Binding: plot_addin
 Interactive: true
