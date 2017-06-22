@@ -33,3 +33,8 @@ Name: class of an object
 Description: class(currently_marked_text)
 Binding: class_addin
 Interactive: true
+
+Name: plot an object
+Description: plot(currently_marked_text)
+Binding: plot_addin
+Interactive: true

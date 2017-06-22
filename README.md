@@ -15,6 +15,7 @@ them):
 * F8 - summary of an object - `summary(selected_code)`
 * F9 - dim of an object - `dim(selected_code)`
 * F10 - class of an object - `class(selected_code)`
+* F11 - plot an object - `plot(selected_code)`
 
 To use these keyboard shortcuts, install this package and follow the instructions below.
 

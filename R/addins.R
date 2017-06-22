@@ -63,3 +63,11 @@ class_addin <- function(obj=selectobject()) {
   class(obj$object)
   }
 
+#' @export
+#' @rdname addins
+#' @importFrom graphics plot
+#'
+plot_addin <- function(obj=selectobject()) {
+  message("plot(", obj$code, ")")
+  plot(obj$object)
+  }

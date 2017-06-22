@@ -8,6 +8,7 @@
 \alias{summary_addin}
 \alias{dim_addin}
 \alias{class_addin}
+\alias{plot_addin}
 \title{Rstudio keyboard shortcuts on F-keys}
 \usage{
 str_addin(obj = selectobject())
@@ -21,6 +22,8 @@ summary_addin(obj = selectobject())
 dim_addin(obj = selectobject())
 
 class_addin(obj = selectobject())
+
+plot_addin(obj = selectobject())
 }
 \arguments{
 \item{obj}{List containing \code{object} (some R object) \code{fullcode}
