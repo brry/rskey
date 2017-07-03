@@ -4,6 +4,7 @@
 \alias{addins}
 \alias{str_addin}
 \alias{head_addin}
+\alias{tail_addin}
 \alias{View_addin}
 \alias{summary_addin}
 \alias{dim_addin}
@@ -14,6 +15,8 @@
 str_addin(obj = selectobject())
 
 head_addin(obj = selectobject())
+
+tail_addin(obj = selectobject())
 
 View_addin(obj = selectobject())
 

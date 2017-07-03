@@ -5,7 +5,7 @@
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, May 2017
 #' @export
 #' @name addins
-#' @importFrom utils str head View
+#' @importFrom utils str head tail View
 #' @references Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
 #'             To be added to \url{https://github.com/daattali/addinslist#readme}
 #' @seealso \code{\link{selectobject}, \link{funSource}}
@@ -27,6 +27,14 @@ str_addin <- function(obj=selectobject()) {
 head_addin <- function(obj=selectobject()) {
   message("head(", obj$code, ")")
   head(obj$object)
+  }
+
+#' @export
+#' @rdname addins
+#'
+tail_addin <- function(obj=selectobject()) {
+  message("tail(", obj$code, ")")
+  tail(obj$object)
   }
 
 #' @export
