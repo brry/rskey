@@ -10,6 +10,7 @@ them):
 
 * F3 - structure of an object - `str(selected_code)`
 * F4 - head of an object - `head(selected_code)`
+* F5 - tail of an object - `tail(selected_code)`
 * F6 - View an object - `View(selected_code)`
 * F7 - funSource of an object - `funSource(selected_code)`
 * F8 - summary of an object - `summary(selected_code)`
