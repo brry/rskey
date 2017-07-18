@@ -11,6 +11,9 @@
 #' @seealso \code{\link{selectobject}, \link{funSource}}
 #' @examples
 #' # Go to Addins - browse Addins - Keyboard shortcuts - map commands as desired
+#' # highlight objects or code (examples below), then press keyboad shortcut
+#' iris
+#' iris$Sepal.Length + 10
 #'
 #' @param obj List containing \code{object} (some R object) \code{fullcode}
 #'            (code, objectname, expression) and \code{code} (potentially truncated version).
@@ -76,6 +79,16 @@ class_addin <- function(obj=selectobject()) {
 #' @importFrom graphics plot
 #'
 plot_addin <- function(obj=selectobject()) {
-  message("plot(", obj$code, ")")
-  plot(obj$object)
+  message("plot(", obj$code, ", las=1)")
+  plot(obj$object, las=1)
+  }
+
+#' @export
+#' @rdname addins
+#' @importFrom graphics hist
+#'
+hist_addin <- function(obj=selectobject()) {
+  message("hist(", obj$code, ", col='moccasin', breaks=50, las=1)")
+  hist(obj$object, col="moccasin", breaks=50, las=1,
+       main=paste("Histogram of", obj$code), xlab=obj$code)
   }

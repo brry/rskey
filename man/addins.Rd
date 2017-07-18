@@ -10,6 +10,7 @@
 \alias{dim_addin}
 \alias{class_addin}
 \alias{plot_addin}
+\alias{hist_addin}
 \title{Rstudio keyboard shortcuts on F-keys}
 \usage{
 str_addin(obj = selectobject())
@@ -27,6 +28,8 @@ dim_addin(obj = selectobject())
 class_addin(obj = selectobject())
 
 plot_addin(obj = selectobject())
+
+hist_addin(obj = selectobject())
 }
 \arguments{
 \item{obj}{List containing \code{object} (some R object) \code{fullcode}
@@ -42,6 +45,9 @@ It can be very useful to bind these addins as outlined in \url{https://github.co
 }
 \examples{
 # Go to Addins - browse Addins - Keyboard shortcuts - map commands as desired
+# highlight objects or code (examples below), then press keyboad shortcut
+iris
+iris$Sepal.Length + 10
 
 }
 \references{

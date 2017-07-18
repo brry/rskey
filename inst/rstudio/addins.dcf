@@ -43,3 +43,8 @@ Name: F11 plot an object
 Description: plot(currently_marked_text)
 Binding: plot_addin
 Interactive: true
+
+Name: F12 histogram of an object
+Description: hist(currently_marked_text)
+Binding: hist_addin
+Interactive: true
