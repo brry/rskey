@@ -14,11 +14,11 @@
 #' # highlight objects or code (examples below), then press keyboad shortcut
 #' iris
 #' iris$Sepal.Length + 10
-#'
+#' 
 #' @param obj List containing \code{object} (some R object) \code{fullcode}
 #'            (code, objectname, expression) and \code{code} (potentially truncated version).
 #'            DEFAULT: Rstudio addin selected code from \code{\link{selectobject}}
-#'
+#' 
 str_addin <- function(obj=selectobject()) {
   message("str(", obj$code, ")")
   str(obj$object)
@@ -26,7 +26,7 @@ str_addin <- function(obj=selectobject()) {
 
 #' @export
 #' @rdname addins
-#'
+#' 
 head_addin <- function(obj=selectobject()) {
   message("head(", obj$code, ")")
   head(obj$object)
@@ -34,7 +34,7 @@ head_addin <- function(obj=selectobject()) {
 
 #' @export
 #' @rdname addins
-#'
+#' 
 tail_addin <- function(obj=selectobject()) {
   message("tail(", obj$code, ")")
   tail(obj$object)
@@ -42,7 +42,7 @@ tail_addin <- function(obj=selectobject()) {
 
 #' @export
 #' @rdname addins
-#'
+#' 
 View_addin <- function(obj=selectobject()) {
   message("View(", obj$code, ")")
   obj <- obj$object
@@ -52,7 +52,7 @@ View_addin <- function(obj=selectobject()) {
 
 #' @export
 #' @rdname addins
-#'
+#' 
 summary_addin <- function(obj=selectobject()) {
   message("summary(", obj$code, ")")
   summary(obj$object)
@@ -60,7 +60,7 @@ summary_addin <- function(obj=selectobject()) {
 
 #' @export
 #' @rdname addins
-#'
+#' 
 dim_addin <- function(obj=selectobject()) {
   message("dim(", obj$code, ")")
   dim(obj$object)
@@ -68,7 +68,7 @@ dim_addin <- function(obj=selectobject()) {
 
 #' @export
 #' @rdname addins
-#'
+#' 
 class_addin <- function(obj=selectobject()) {
   message("class(", obj$code, ")")
   class(obj$object)
@@ -77,7 +77,7 @@ class_addin <- function(obj=selectobject()) {
 #' @export
 #' @rdname addins
 #' @importFrom graphics plot
-#'
+#' 
 plot_addin <- function(obj=selectobject()) {
   message("plot(", obj$code, ", las=1)")
   plot(obj$object, las=1)
@@ -86,7 +86,7 @@ plot_addin <- function(obj=selectobject()) {
 #' @export
 #' @rdname addins
 #' @importFrom graphics hist
-#'
+#' 
 hist_addin <- function(obj=selectobject()) {
   message("hist(", obj$code, ", col='moccasin', breaks=50, las=1)")
   hist(obj$object, col="moccasin", breaks=50, las=1,

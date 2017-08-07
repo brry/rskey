@@ -9,13 +9,13 @@
 #' @seealso \code{\link{selectobject}, \link{addins}}
 #' @examples
 #' # Go to Addins - browse Addins - Keyboard shortcuts - map "funSource of an object" to F7
-#'
+#' 
 #' @param x function name, with or without quotation marks.
 #'          DEFAULT from \code{\link{selectobject}}
 #' @param character.only If TRUE, look for SomeFun instead of MyFun if
 #'                       MyFun <- "SomeFun". DEFAULT: \code{\link{is.character}(x)}
 #' @param trydirect If TRUE, try direct url to file \code{x.R}. DEFAULT: TRUE
-#'
+#' 
 funSource <- function(
 x=selectobject()$fullcode,
 character.only=is.character(x),

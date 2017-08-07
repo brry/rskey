@@ -10,8 +10,8 @@
 #' @seealso \code{\link{addins}, \link{funSource}}
 #' @examples
 #' # see str_addin
-#'
-#'
+#' 
+#' 
 selectobject <- function() {
   # Extract highlighted text from Active Document
   so_context <- try(rstudioapi::getActiveDocumentContext(), silent=TRUE)
