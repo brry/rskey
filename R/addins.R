@@ -63,7 +63,10 @@ summary_addin <- function(obj=selectobject()) {
 #' 
 dim_addin <- function(obj=selectobject()) {
   message("dim(", obj$code, ")")
-  dim(obj$object)
+  out <- dim(obj$object)
+  if(is.null(out)) return(paste0("dim: NULL, class: ",class(obj$object),
+                                 ", length: ", length(obj$object)))
+  out
   }
 
 #' @export
