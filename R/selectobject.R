@@ -5,7 +5,7 @@
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, May 2017
 #' @export
 #' @importFrom rstudioapi getActiveDocumentContext
-#' @importFrom utils tail
+#' @importFrom utils tail head
 #' @references Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
 #' @seealso \code{\link{addins}, \link{funSource}}
 #' @examples
