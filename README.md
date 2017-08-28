@@ -42,9 +42,9 @@ You can also explicitly request `funSource("somePackage::someFunction")`.
 This works even if the package is not installed (in which case you do need the quotation marks).
 
 #### open urls
-It then opens two links in the default browser:  
+It then opens three links in the default browser:  
 
-* github.com/cran/`somePackage`/blob/master/R/`someFunction`.R
+* github.com/cran/`somePackage`/blob/master/R/`someFunction`.R (and `.r` file)
 * github.com/search?q=`someFunction` function repo:cran/`somePackage`+path:R
 
 The second window is a github search query needed quite often 
