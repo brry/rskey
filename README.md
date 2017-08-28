@@ -61,6 +61,10 @@ Functions in base packages - `graphics::hist`:
 <https://github.com/wch/r-source/tree/trunk/src/library/graphics/R/hist.R>  
 [https://github.com/search?q=hist function repo:wch/r-source+path:src/library/graphics/R](https://github.com/search?q=hist%20function%20repo:wch/r-source+path:src/library/graphics/R)
 
+#### limits
+Currently, `funSource` doesn't work for `names` or `dimnames` in base R.
+Any idea to solve this kind of limitation is welcome!
+
 #### origins
 `funSource` was originally developed within the
 [berryFunctions](https://github.com/brry/berryFunctions/blob/master/R/funSource.R) 

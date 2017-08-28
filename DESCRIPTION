@@ -1,7 +1,7 @@
 Package: rskey
 Title: Create custom Rstudio Keyboard shortcuts
-Version: 0.2.4
-Date: 2017-08-11
+Version: 0.2.5
+Date: 2017-08-28
 Authors@R: person("Berry", "Boessenkool", email = "berry-b@gmx.de", role = c("aut", "cre"))
 Description: This creates custom Rstudio keyboard shortcuts like F3 for str.
 Imports: graphics, utils,

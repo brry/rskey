@@ -14,7 +14,7 @@ DEFAULT from \code{\link{selectobject}}}
 \item{character.only}{If TRUE, look for SomeFun instead of MyFun if
 MyFun <- "SomeFun". DEFAULT: \code{\link{is.character}(x)}}
 
-\item{trydirect}{If TRUE, try direct url to file \code{x.R}. DEFAULT: TRUE}
+\item{trydirect}{If TRUE, try direct urls to files \code{x.R} and \code{x.r}. DEFAULT: TRUE}
 }
 \value{
 links that are also opened with \code{\link{browseURL}}

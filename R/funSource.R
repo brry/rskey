@@ -14,7 +14,7 @@
 #'          DEFAULT from \code{\link{selectobject}}
 #' @param character.only If TRUE, look for SomeFun instead of MyFun if
 #'                       MyFun <- "SomeFun". DEFAULT: \code{\link{is.character}(x)}
-#' @param trydirect If TRUE, try direct url to file \code{x.R}. DEFAULT: TRUE
+#' @param trydirect If TRUE, try direct urls to files \code{x.R} and \code{x.r}. DEFAULT: TRUE
 #' 
 funSource <- function(
 x=selectobject()$fullcode,
@@ -74,7 +74,7 @@ if(pn %in% c("base", "compiler", "datasets", "grDevices", "graphics", "grid",
 
 # open link in Browser ---------------------------------------------------------
 
-if(trydirect) browseURL(finallink)
+if(trydirect) {browseURL(finallink); browseURL(sub("\\.R$", '\\.r', finallink))}
 # Search github repo query link
 searchlink <- paste0("https://github.com/search?q=",x," function repo:",slink)
 browseURL(searchlink)
