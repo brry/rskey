@@ -23,7 +23,7 @@ To use these keyboard shortcuts, install this package and follow the instruction
 
 ```R
 if(!requireNamespace("devtools")) install.packages("devtools")
-devtools::install_github("brry/rstudioberry")
+devtools::install_github("brry/rskey")
 ```
 
 * (Restart Rstudio)
