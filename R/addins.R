@@ -20,8 +20,8 @@
 #'            DEFAULT: Rstudio addin selected code from \code{\link{selectobject}}
 #' 
 str_addin <- function(obj=selectobject()) {
-  message("str(", obj$code, ")")
-  str(obj$object)
+  message("str(", obj$code, ", max.level=3)")
+  str(obj$object, max.level=3)
   }
 
 #' @export
