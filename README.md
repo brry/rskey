@@ -30,7 +30,7 @@ devtools::install_github("brry/rskey")
 
 * (Restart Rstudio)
 * On the top should be the field "Addins" which may already contain the entries listed above
-* Click on Addins - browse Addins - Keyboard shortcuts 
+* Go to Rstudio - Tools - Modify Keyboard Shortcurts (*Used to be:* ~~Click on Addins - browse Addins - Keyboard shortcuts~~)
 * map the entries by clicking on the shortcut field and pressing e.g. `F3` (you could map as outlined above)
 
 
