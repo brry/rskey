@@ -25,7 +25,7 @@ selectobject <- function() {
                             call.=FALSE)
 
   # Execute code to account for cases where highlighed text is not an object, but code that generates one
-  object <- try(eval(parse(text=so_text)), silent=TRUE)
+  object <- try(eval.parent(parse(text=so_text), n=2), silent=TRUE)
 
   if(inherits(object, "try-error"))
   {
