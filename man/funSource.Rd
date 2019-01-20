@@ -4,8 +4,8 @@
 \alias{funSource}
 \title{Source code of a function}
 \usage{
-funSource(x = selectobject()$fullcode, character.only = is.character(x),
-  trydirect = TRUE)
+funSource(x = selectobject()$fullcode,
+  character.only = is.character(x), trydirect = TRUE)
 }
 \arguments{
 \item{x}{function name, with or without quotation marks.
