@@ -28,7 +28,7 @@ if(!requireNamespace("devtools")) install.packages("devtools")
 devtools::install_github("brry/rskey")
 
 rskey::setKeyboardBindings(overwrite=TRUE)  # optional to avoid manual setting
-# by default also sets CTR+Y for ReDo and CTRL+H for setWorkingDirToActiveDoc
+# by default also sets CTRL+Y for ReDo and CTRL+H for setWorkingDirToActiveDoc
 ```
 
 * (Restart Rstudio)
