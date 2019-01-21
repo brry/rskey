@@ -24,9 +24,15 @@ setKeyboardBindings <- function(
   )
 {
 # read current keybinding files:
-key_ai <- readLines("~/.R/rstudio/keybindings/addins.json", warn=FALSE)
-key_ed <- readLines("~/.R/rstudio/keybindings/editor_bindings.json", warn=FALSE)
-key_rs <- readLines("~/.R/rstudio/keybindings/rstudio_bindings.json", warn=FALSE)
+file_ai <- "~/.R/rstudio/keybindings/addins.json"
+file_ed <- "~/.R/rstudio/keybindings/editor_bindings.json"
+file_rs <- "~/.R/rstudio/keybindings/rstudio_bindings.json"
+if(!file.exists(file_ai)) cat("{\n}", file=file_ai)
+if(!file.exists(file_ed)) cat("{\n}", file=file_ed)
+if(!file.exists(file_rs)) cat("{\n}", file=file_rs)
+key_ai <- readLines(file_ai, warn=FALSE)
+key_ed <- readLines(file_ed, warn=FALSE)
+key_rs <- readLines(file_rs, warn=FALSE)
 
 
 # get currently set keyboard shortcuts:
@@ -71,7 +77,6 @@ setkeys$remove[substr(setkeys$fun, 1,7) == "rskey::" & is.na(setkeys$key)] <- TR
 rm_ai <- setkeys[setkeys$source=="key_ai",]$remove
 rm_ed <- setkeys[setkeys$source=="key_ed",]$remove
 rm_rs <- setkeys[setkeys$source=="key_rs",]$remove
-#if(overwrite) rm_ai <- rm_ai | substr(setkeys[setkeys$source=="key_ai",]$fun, 1,7) == "rskey::"
 if(any(rm_ai)) key_ai <- key_ai[- (which(rm_ai)+1)]
 if(any(rm_ed)) key_ed <- key_ed[- (which(rm_ed)+1)]
 if(any(rm_rs)) key_rs <- key_rs[- (which(rm_rs)+1)]
@@ -118,9 +123,10 @@ if(removeLastYank) if(!any(grepl("pasteLastYank", key_rs)))
   } 
 
 
-writeLines(key_ai, "~/.R/rstudio/keybindings/addins.json")
-writeLines(key_ed, "~/.R/rstudio/keybindings/editor_bindings.json")
-writeLines(key_rs, "~/.R/rstudio/keybindings/rstudio_bindings.json")
+# Write new contents to the files:
+writeLines(key_ai, file_ai)
+writeLines(key_ed, file_ed)
+writeLines(key_rs, file_rs)
 
 message("Please restart Rstudio now for the changes to take effect.")
 
