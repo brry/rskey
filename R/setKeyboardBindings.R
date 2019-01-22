@@ -27,6 +27,8 @@ setKeyboardBindings <- function(
 file_ai <- "~/.R/rstudio/keybindings/addins.json"
 file_ed <- "~/.R/rstudio/keybindings/editor_bindings.json"
 file_rs <- "~/.R/rstudio/keybindings/rstudio_bindings.json"
+if(!dir.exists("~/.R/rstudio/keybindings")) 
+    dir.create("~/.R/rstudio/keybindings", recursive=TRUE)
 if(!file.exists(file_ai)) cat("{\n}", file=file_ai)
 if(!file.exists(file_ed)) cat("{\n}", file=file_ed)
 if(!file.exists(file_rs)) cat("{\n}", file=file_rs)
