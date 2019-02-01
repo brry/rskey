@@ -8,18 +8,19 @@
 #' @export
 #' @seealso \code{\link{selectobject}, \link{addins}}
 #' @examples
-#' # Go to Addins - browse Addins - Keyboard shortcuts - map "funSource of an object" to F7
+#' funSource("head")
+#' funSource(OSMscale::earthDist) # works even for non-installed CRAN packages
+#' 
+#' # Go to Rstudio - Tools - Modify Keyboard Shortcuts - map "funSource of an object" to F7
 #' 
 #' @param x function name, with or without quotation marks.
 #'          DEFAULT from \code{\link{selectobject}}
 #' @param character.only If TRUE, look for SomeFun instead of MyFun if
 #'                       MyFun <- "SomeFun". DEFAULT: \code{\link{is.character}(x)}
-#' @param trydirect If TRUE, try direct urls to files \code{x.R} and \code{x.r}. DEFAULT: TRUE
 #' 
 funSource <- function(
 x=selectobject()$fullcode,
-character.only=is.character(x),
-trydirect=TRUE
+character.only=is.character(x)
 )
 {
 if(missing(x)) message("funSource(", x, ")")
@@ -74,11 +75,34 @@ if(pn %in% c("base", "compiler", "datasets", "grDevices", "graphics", "grid",
 
 # open link in Browser ---------------------------------------------------------
 
-if(trydirect) {browseURL(finallink); browseURL(sub("\\.R$", '\\.r', finallink))}
 # Search github repo query link
 searchlink <- paste0("https://github.com/search?q=",x," function repo:",slink)
-browseURL(searchlink)
-# output
-c(searchlink, finallink)
-}
 
+# little helper function to determine existence of a link:
+canBeRead <- function(url)
+ {
+ rl <- suppressWarnings(try(readLines(url, n=1), silent=TRUE))
+ !inherits(rl, "try-error")
+ }
+
+# Option 1: If the link can be read, open it in the browser and return output:
+if(canBeRead(finallink)) 
+ {
+ browseURL(finallink) 
+ return(c(searchlink, finallink))
+ }
+
+# Option 2: Try with lowercase r:
+finallink <- sub("\\.R$", '\\.r', finallink)
+if(canBeRead(finallink)) 
+ {
+ browseURL(finallink) 
+ return(c(searchlink, finallink))
+ }
+
+# Option 3: open the searchlink:
+# this would also occur if R has no internet acces, but the browser does
+browseURL(searchlink)
+return(searchlink)
+  
+}
