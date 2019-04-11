@@ -7,7 +7,7 @@
 bdoc()
 }
 \value{
-charstring, also printed via \code{\link{message}}
+charstring, also written to the clipboard
 }
 \description{
 Create Roxygen documentation skeleton for a function

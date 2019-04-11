@@ -1,6 +1,6 @@
 #' @title Create documentation for a function
 #' @description Create Roxygen documentation skeleton for a function
-#' @return charstring, also printed via \code{\link{message}}
+#' @return charstring, also written to the clipboard
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, Apr 2019
 #' @seealso \code{\link{selectobject}}
 #' @importFrom utils writeClipboard
