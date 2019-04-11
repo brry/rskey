@@ -10,10 +10,10 @@ bdoc()
 charstring, also printed via \code{\link{message}}
 }
 \description{
-Create documentation for a function
+Create Roxygen documentation skeleton for a function
 }
 \seealso{
-\code{\link{selectObject}}
+\code{\link{selectobject}}
 }
 \author{
 Berry Boessenkool, \email{berry-b@gmx.de}, Apr 2019

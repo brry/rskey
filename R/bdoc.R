@@ -2,7 +2,9 @@
 #' @description Create Roxygen documentation skeleton for a function
 #' @return charstring, also printed via \code{\link{message}}
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, Apr 2019
-#' @seealso \code{\link{selectObject}}
+#' @seealso \code{\link{selectobject}}
+#' @importFrom utils writeClipboard
+#' @importFrom rstudioapi getActiveDocumentContext
 #' @export
 #'
 bdoc <- function()
@@ -20,6 +22,7 @@ if(nchar(so_text) == 0) stop("Nothing is highlighted in the RStudio Source Edito
 #
 # Argument section with DEFAULTs
 arg <- strsplit(so_text, "function(", fixed=TRUE)[[1]][2]
+arg <- sub("\n$", "", arg)
 arg <- sub(")$", "", arg)
 arg <- unlist(strsplit(arg, ","))
 arg <- sub("^[[:space:]]*(.*?)[[:space:]]*$", "\\1", arg, perl=TRUE)
@@ -56,7 +59,10 @@ out <- paste0(
 '
 ", arg, "
 '")
+# hashes should not be picked up by Roxygen for this source code, hence added now:
+out <- paste0("#", strsplit(out, "\n", fixed=TRUE)[[1]])
 
-message(out)
+writeClipboard(out)
+message("Roxygen skeleton copied to clipboard.")
 return(invisible(out))
 }
