@@ -23,8 +23,8 @@ open source code of a function in a loaded or specified package
          It can be very useful to bind this addin to F7, for example.
 }
 \examples{
-funSource("head")
-funSource(OSMscale::earthDist) # works even for non-installed CRAN packages
+funSource(head)
+funSource("OSMscale::earthDist") # works even for non-installed CRAN packages
 
 # Go to Rstudio - Tools - Modify Keyboard Shortcuts - map "funSource of an object" to F7
 
