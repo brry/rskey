@@ -5,7 +5,7 @@
 \title{Source code of a function}
 \usage{
 funSource(x = selectobject()$fullcode,
-  character.only = is.character(x), trydirect = TRUE)
+  character.only = is.character(x))
 }
 \arguments{
 \item{x}{function name, with or without quotation marks.
@@ -13,8 +13,6 @@ DEFAULT from \code{\link{selectobject}}}
 
 \item{character.only}{If TRUE, look for SomeFun instead of MyFun if
 MyFun <- "SomeFun". DEFAULT: \code{\link{is.character}(x)}}
-
-\item{trydirect}{If TRUE, try direct urls to files \code{x.R} and \code{x.r}. DEFAULT: TRUE}
 }
 \value{
 links that are also opened with \code{\link{browseURL}}
@@ -25,7 +23,10 @@ open source code of a function in a loaded or specified package
          It can be very useful to bind this addin to F7, for example.
 }
 \examples{
-# Go to Addins - browse Addins - Keyboard shortcuts - map "funSource of an object" to F7
+funSource("head")
+funSource(OSMscale::earthDist) # works even for non-installed CRAN packages
+
+# Go to Rstudio - Tools - Modify Keyboard Shortcuts - map "funSource of an object" to F7
 
 }
 \seealso{
