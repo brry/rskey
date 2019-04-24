@@ -24,8 +24,8 @@ them):
 To use these keyboard shortcuts, install this package and follow the instructions below.
 
 ```R
-if(!requireNamespace("devtools")) install.packages("devtools")
-devtools::install_github("brry/rskey")
+if(!requireNamespace("remotes")) install.packages("remotes")
+remotes::install_github("brry/rskey")
 
 rskey::setKeyboardBindings(overwrite=TRUE)  # optional to avoid manual setting
 # by default also sets CTRL+Y for ReDo and CTRL+H for setWorkingDirToActiveDoc
