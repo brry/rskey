@@ -6,6 +6,7 @@
 \alias{head_addin}
 \alias{tail_addin}
 \alias{View_addin}
+\alias{funSource_addin}
 \alias{summary_addin}
 \alias{dim_addin}
 \alias{class_addin}
@@ -21,6 +22,8 @@ tail_addin(obj = selectobject())
 
 View_addin(obj = selectobject())
 
+funSource_addin(obj = selectobject(eval = FALSE))
+
 summary_addin(obj = selectobject())
 
 dim_addin(obj = selectobject())
@@ -33,7 +36,9 @@ hist_addin(obj = selectobject())
 }
 \arguments{
 \item{obj}{List containing \code{object} (some R object) \code{fullcode}
-(code, objectname, expression) and \code{code} (potentially truncated version).
+(code, objectname, expression) and \code{code} 
+(potentially truncated version).
+For funSource_addin, only the function name should be highlighted.
 DEFAULT: Rstudio addin selected code from \code{\link{selectobject}}}
 }
 \value{
@@ -41,7 +46,8 @@ Output of the respective functions
 }
 \description{
 Rstudio addins to examine highlighted code / object.
-It can be very useful to bind these addins as outlined in \url{https://github.com/brry/rstudioberry#rstudio-addins-for-keyboard-shortcuts}
+It can be very useful to bind these addins as outlined in 
+\url{https://github.com/brry/rskey#rstudio-addins-for-keyboard-shortcuts}
 }
 \examples{
 # Go to Addins - browse Addins - Keyboard shortcuts - map commands as desired
@@ -55,7 +61,8 @@ Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
             To be added to \url{https://github.com/daattali/addinslist#readme}
 }
 \seealso{
-\code{\link{selectobject}, \link{funSource}}
+\code{\link{selectobject}}, 
+         \code{berryFunctions::\link[berryFunctions]{funSource}}
 }
 \author{
 Berry Boessenkool, \email{berry-b@gmx.de}, May 2017

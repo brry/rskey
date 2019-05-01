@@ -21,7 +21,7 @@ Interactive: true
 
 Name: F07 funSource of an object
 Description: funSource(currently_marked_text)
-Binding: funSource
+Binding: funSource_addin
 Interactive: true
 
 Name: F08 summary of an object

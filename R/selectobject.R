@@ -11,8 +11,10 @@
 #' @examples
 #' # see str_addin
 #' 
-#' 
-selectobject <- function() {
+#' @param eval Should text be evaluated? 
+#'             If FALSE, the output is a charstring of the marked text.
+#'             DEFAULT: TRUE
+selectobject <- function(eval=TRUE) {
   # Extract highlighted text from Active Document
   so_context <- try(rstudioapi::getActiveDocumentContext(), silent=TRUE)
   if(inherits(so_context, "try-error")) stop("rstudioapi::getActiveDocumentContext failed.\n",
@@ -23,7 +25,8 @@ selectobject <- function() {
   if(nchar(so_text) == 0) stop("Nothing is highlighted in the RStudio Source Editor. ",
                             "Please ensure an object (or some code) is highlighted.",
                             call.=FALSE)
-
+  if(!eval) return(so_text)
+  
   # Execute code to account for cases where highlighed text is not an object, but code that generates one
   object <- try(eval.parent(parse(text=so_text), n=2), silent=TRUE)
 

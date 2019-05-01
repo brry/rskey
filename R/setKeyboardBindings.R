@@ -88,16 +88,16 @@ if(any(rm_rs)) key_rs <- key_rs[- (which(rm_rs)+1)]
 # Add new entries:
 
 new <- read.table(as.is=TRUE, header=TRUE, sep="|",  strip.white=TRUE, text="fun | key
-rskey::str_addin     | F3
-rskey::head_addin    | F4
-rskey::tail_addin    | F5
-rskey::View_addin    | F6
-rskey::funSource     | F7
-rskey::summary_addin | F8
-rskey::dim_addin     | F9
-rskey::class_addin   | F10
-rskey::plot_addin    | F11
-rskey::hist_addin    | F12")
+rskey::str_addin       | F3
+rskey::head_addin      | F4
+rskey::tail_addin      | F5
+rskey::View_addin      | F6
+rskey::funSource_addin | F7
+rskey::summary_addin   | F8
+rskey::dim_addin       | F9
+rskey::class_addin     | F10
+rskey::plot_addin      | F11
+rskey::hist_addin      | F12")
 if(nrow(setkeys)>0) new <- new[!new$key %in% setkeys[!setkeys$remove,"key"]   , ]
 
 if(nrow(new)>0)

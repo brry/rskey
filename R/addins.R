@@ -1,14 +1,17 @@
 #' @title Rstudio keyboard shortcuts on F-keys
 #' @description Rstudio addins to examine highlighted code / object.
-#' It can be very useful to bind these addins as outlined in \url{https://github.com/brry/rstudioberry#rstudio-addins-for-keyboard-shortcuts}
+#' It can be very useful to bind these addins as outlined in 
+#' \url{https://github.com/brry/rskey#rstudio-addins-for-keyboard-shortcuts}
 #' @return Output of the respective functions
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, May 2017
 #' @export
 #' @name addins
 #' @importFrom utils str head tail View
+#' @importFrom berryFunctions funSource
 #' @references Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
 #'             To be added to \url{https://github.com/daattali/addinslist#readme}
-#' @seealso \code{\link{selectobject}, \link{funSource}}
+#' @seealso \code{\link{selectobject}}, 
+#'          \code{berryFunctions::\link[berryFunctions]{funSource}}
 #' @examples
 #' # Go to Addins - browse Addins - Keyboard shortcuts - map commands as desired
 #' # highlight objects or code (examples below), then press keyboad shortcut
@@ -16,7 +19,9 @@
 #' iris$Sepal.Length + 10
 #' 
 #' @param obj List containing \code{object} (some R object) \code{fullcode}
-#'            (code, objectname, expression) and \code{code} (potentially truncated version).
+#'            (code, objectname, expression) and \code{code} 
+#'            (potentially truncated version).
+#'            For funSource_addin, only the function name should be highlighted.
 #'            DEFAULT: Rstudio addin selected code from \code{\link{selectobject}}
 #' 
 str_addin <- function(obj=selectobject()) {
@@ -49,6 +54,14 @@ View_addin <- function(obj=selectobject()) {
   if(!is.data.frame(obj)) try( obj <- as.data.frame(obj)  )
   View(obj)
   }
+
+#' @export
+#' @rdname addins
+#' 
+funSource_addin <- function(obj=selectobject(eval=FALSE)) {
+  message("funSource(", obj, ")")
+  berryFunctions::funSource(obj)
+}
 
 #' @export
 #' @rdname addins

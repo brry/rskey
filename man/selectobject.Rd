@@ -4,7 +4,12 @@
 \alias{selectobject}
 \title{Select object}
 \usage{
-selectobject()
+selectobject(eval = TRUE)
+}
+\arguments{
+\item{eval}{Should text be evaluated? 
+If FALSE, the output is a charstring of the marked text.
+DEFAULT: TRUE}
 }
 \value{
 List with the (evaluated) object and the code generating it as a character string
@@ -15,7 +20,6 @@ Also works in browser mode, albeit not in the code_browser window.
 }
 \examples{
 # see str_addin
-
 
 }
 \references{
