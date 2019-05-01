@@ -60,6 +60,8 @@ View_addin <- function(obj=selectobject()) {
 #' 
 funSource_addin <- function(obj=selectobject(eval=FALSE)) {
   message("funSource(", obj, ")")
+  if(grepl("[^[:alnum:]|^_|^.|^:]", obj) && packageVersion("berryFunctions")<"1.18.3") 
+    warning("funSource accepts only a function name as input (without brackets etc).")
   berryFunctions::funSource(obj)
 }
 
