@@ -3,7 +3,6 @@
 #' @return charstring, also written to the clipboard
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, Apr 2019
 #' @seealso \code{\link{selectobject}}
-#' @importFrom utils writeClipboard
 #' @importFrom rstudioapi getActiveDocumentContext
 #' @export
 #'
@@ -62,7 +61,14 @@ out <- paste0(
 # hashes should not be picked up by Roxygen for this source code, hence added now:
 out <- paste0("#", strsplit(out, "\n", fixed=TRUE)[[1]])
 
-writeClipboard(out)
+
+if(Sys.info()["sysname"] == "Windows")
+{
+utils::writeClipboard(out)
 message("Roxygen skeleton copied to clipboard.")
 return(invisible(out))
+} else
+message("Roxygen skeleton printed in console.")
+return(out)
+
 }
