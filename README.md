@@ -2,13 +2,13 @@
 
 ### rstudio addins for Keyboard shortcuts
 
-Rstudio addins to examine a highlighted object (or code creating an object).  
+Rstudio addins to examine selected code in the Rstudio editor.  
 *Berry Boessenkool (<berry-b@gmx.de>), May 2017, with `selectobject` code idea from
 [digital-dharma](https://rdrr.io/github/digital-dharma/RStudioAddIns/src/R/GetHighlightedDF.R).*
 
-I found it very useful to bind the addins to keyboard shortcuts like this (and
+I find it very useful to bind the addins to keyboard shortcuts like this (and
 [label](https://github.com/brry/rstudioberry/raw/master/inst/keyboardRlabels.ods)
-them):
+the keyboard):
 
 * F3 - structure of an object - `str(selected_code)`
 * F4 - head of an object - `head(selected_code)`
@@ -21,20 +21,21 @@ them):
 * F11 - plot an object - `plot(selected_code, las=1)`
 * F12 - histogram of an object - `hist(selected_code, col="moccasin", breaks=50, las=1)`
 
-To use these keyboard shortcuts, install this package and follow the instructions below.
+To use such keyboard shortcuts, follow these instructions:
 
 ```R
 if(!requireNamespace("remotes")) install.packages("remotes")
 remotes::install_github("brry/rskey")
 
-rskey::setKeyboardBindings(overwrite=TRUE)  # optional to avoid manual setting
+# either set all bindings:
+rskey::setKeyboardBindings(overwrite=TRUE)
 # by default also sets CTRL+Y for ReDo and CTRL+H for setWorkingDirToActiveDoc
-```
 
-* On the top should be the field "Addins" which may already contain the entries listed above
-* Go to Rstudio - Tools - Modify Keyboard Shortcurts (*Used to be:* ~~Click on Addins - browse Addins - Keyboard shortcuts~~)
-* map the entries by clicking on the shortcut field and pressing e.g. `F3` (you could map as outlined above)
-* (Restart Rstudio)
+# or manually:
+# Rstudio - Tools - Modify Keyboard Shortcurts
+# click on an addin shortcut field and press the desired key combination
+# (Restart Rstudio)
+```
 
 
 ### funSource
@@ -52,26 +53,25 @@ In the default browser, it the opens the first link if it exists, the second if 
 * github.com/cran/`somePackage`/blob/master/R/`someFunction`.R (or `.r` file)
 * github.com/search?q=`someFunction` function repo:cran/`somePackage`+path:R
 
-The second link is a github search query needed quite often 
-because functions may be defined in a file with a different name.  
+The second link is a github search query needed when a function is defined in a file with a different name.  
 Functions in the base R packages will be searched in the 
 [wch/r-source/src/library](https://github.com/wch/r-source/tree/trunk/src/library) repo.  
 
-#### examples
-Randomly selected example - `spatstat::rescale`:  
-<https://github.com/cran/spatstat/blob/master/R/rescale.R>  
-[https://github.com/search?q=rescale function repo:cran/spatstat+path:R](https://github.com/search?q=rescale%20function%20repo:cran/spatstat+path:R)
-
-Functions in base packages - `graphics::hist`:  
-<https://github.com/wch/r-source/tree/trunk/src/library/graphics/R/hist.R>  
-[https://github.com/search?q=hist function repo:wch/r-source+path:src/library/graphics/R](https://github.com/search?q=hist%20function%20repo:wch/r-source+path:src/library/graphics/R)
-
 #### limits
-Currently, `funSource` doesn't work for `names` or `dimnames` in base R.
+Currently, the `funSource`-initiated github search doesn't find `names` or `dimnames` in base R.
 Any idea to solve this kind of limitation is welcome!
 
 #### origin
 `funSource` is imported from
 [berryFunctions](https://github.com/brry/berryFunctions/blob/master/R/funSource.R).
 
+#### examples
+Examples on links opened by `funSource`:
 
+Functions in CRAN packages - `spatstat::rescale`:  
+<https://github.com/cran/spatstat/blob/master/R/rescale.R>  
+[https://github.com/search?q=rescale function repo:cran/spatstat+path:R](https://github.com/search?q=rescale%20function%20repo:cran/spatstat+path:R)
+
+Functions in base packages - `graphics::hist`:  
+<https://github.com/wch/r-source/tree/trunk/src/library/graphics/R/hist.R>  
+[https://github.com/search?q=hist function repo:wch/r-source+path:src/library/graphics/R](https://github.com/search?q=hist%20function%20repo:wch/r-source+path:src/library/graphics/R)
