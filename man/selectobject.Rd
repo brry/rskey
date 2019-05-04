@@ -23,7 +23,7 @@ Also works in browser mode, albeit not in the code_browser window.
 
 }
 \references{
-Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
+Heavily borrowed from \url{https://rdrr.io/github/digital-dharma/RStudioAddIns}
 }
 \seealso{
 \code{\link{addins}, \link{funSource}}

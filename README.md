@@ -4,7 +4,7 @@
 
 Rstudio addins to examine a highlighted object (or code creating an object).  
 *Berry Boessenkool (<berry-b@gmx.de>), May 2017, with `selectobject` code idea from
-[digital-dharma](https://github.com/digital-dharma/RStudioAddIns).*
+[digital-dharma](https://rdrr.io/github/digital-dharma/RStudioAddIns/src/R/GetHighlightedDF.R).*
 
 I found it very useful to bind the addins to keyboard shortcuts like this (and
 [label](https://github.com/brry/rstudioberry/raw/master/inst/keyboardRlabels.ods)

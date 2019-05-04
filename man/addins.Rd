@@ -51,18 +51,17 @@ It can be very useful to bind these addins as outlined in
 }
 \examples{
 # Go to Addins - browse Addins - Keyboard shortcuts - map commands as desired
-# highlight objects or code (examples below), then press keyboad shortcut
+# or use    setKeyboardBindings()
+
+# highlight objects or code (examples below), then press keyboard shortcut
 iris
 iris$Sepal.Length + 10
 
 }
-\references{
-Heavily borrowed from \url{https://github.com/digital-dharma/RStudioAddIns}
-            To be added to \url{https://github.com/daattali/addinslist#readme}
-}
 \seealso{
 \code{\link{selectobject}}, 
-         \code{berryFunctions::\link[berryFunctions]{funSource}}
+         \code{berryFunctions::\link[berryFunctions]{funSource}},
+         \url{https://github.com/daattali/addinslist#readme}
 }
 \author{
 Berry Boessenkool, \email{berry-b@gmx.de}, May 2017
