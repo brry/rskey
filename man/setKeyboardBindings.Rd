@@ -9,7 +9,7 @@ setKeyboardBindings(overwrite = TRUE, removeLastYank = TRUE,
 }
 \arguments{
 \item{overwrite}{Logical. Should existing mappings on F3, F4, ..., F12
-be overwritten? Still warns if this occurs. DEFAULT: TRUE}
+be overwritten? Still informs if this occurs. DEFAULT: TRUE}
 
 \item{removeLastYank}{Logical. Should the annoying Rstudio default to override
 "Redo" (CTRL+Y) with some weird yank be removed? 

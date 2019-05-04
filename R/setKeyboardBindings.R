@@ -9,7 +9,7 @@
 #' @importFrom utils read.table
 #' @export
 #' @param overwrite       Logical. Should existing mappings on F3, F4, ..., F12
-#'                        be overwritten? Still warns if this occurs. DEFAULT: TRUE
+#'                        be overwritten? Still informs if this occurs. DEFAULT: TRUE
 #' @param removeLastYank  Logical. Should the annoying Rstudio default to override
 #'                        "Redo" (CTRL+Y) with some weird yank be removed? 
 #'                        DEFAULT: TRUE (Ctrl+Y becomes "Redo" again)
@@ -23,6 +23,10 @@ setKeyboardBindings <- function(
   workdir2filedir=TRUE
   )
 {
+# Demand permission:
+OK <- readline("Is it OK to create / change the 3 files at '~/.R/rstudio/keybindings'? y/n: ")
+if(tolower(substr(OK,1,1)) != "y") stop("Not setting keyboard bindings ",
+                                        "because you declined.")
 # read current keybinding files:
 file_ai <- "~/.R/rstudio/keybindings/addins.json"
 file_ed <- "~/.R/rstudio/keybindings/editor_bindings.json"
@@ -130,6 +134,7 @@ writeLines(key_ai, file_ai)
 writeLines(key_ed, file_ed)
 writeLines(key_rs, file_rs)
 
-message("Please restart Rstudio now for the changes to take effect.")
+message("The keyboard shortcuts were successfully set.\n",
+        "Please restart Rstudio now for the changes to take effect.")
 
 }
