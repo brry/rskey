@@ -56,6 +56,7 @@ View_addin <- function(obj=selectobject()) {
   }
 
 #' @export
+#' @importFrom utils packageVersion
 #' @rdname addins
 #' 
 funSource_addin <- function(obj=selectobject(eval=FALSE)) {
