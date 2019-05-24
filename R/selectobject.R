@@ -6,7 +6,7 @@
 #' @export
 #' @importFrom rstudioapi getActiveDocumentContext
 #' @importFrom utils tail head
-#' @references Heavily borrowed from \url{https://rdrr.io/github/digital-dharma/RStudioAddIns}
+#' @references Heavily borrowed from digital-dharma/RStudioAddIns (no longer online)
 #' @seealso \code{\link{addins}, \link{funSource}}
 #' @examples
 #' # see str_addin
