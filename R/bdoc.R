@@ -1,6 +1,6 @@
 #' @title Create documentation for a function
 #' @description Create Roxygen documentation skeleton for a function
-#' @return charstring, also written to the clipboard
+#' @return charstring
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, Apr 2019
 #' @seealso \code{\link{selectobject}}
 #' @importFrom rstudioapi getActiveDocumentContext
@@ -62,12 +62,12 @@ out <- paste0(
 out <- paste0("#", strsplit(out, "\n", fixed=TRUE)[[1]])
 
 
-if(Sys.info()["sysname"] == "Windows")
-{
-utils::writeClipboard(out)
-message("Roxygen skeleton copied to clipboard.")
-return(invisible(out))
-} else
+# if(Sys.info()["sysname"] == "Windows")
+# {
+# utils::writeClipboard(out)
+# message("Roxygen skeleton copied to clipboard.")
+# return(invisible(out))
+# } else
 message("Roxygen skeleton printed in console.")
 return(out)
 
