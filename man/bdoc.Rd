@@ -7,7 +7,7 @@
 bdoc()
 }
 \value{
-charstring
+invisible charstring, but mainly used for writing into the source file directly
 }
 \description{
 Create Roxygen documentation skeleton for a function

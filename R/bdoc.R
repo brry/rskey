@@ -1,9 +1,9 @@
 #' @title Create documentation for a function
 #' @description Create Roxygen documentation skeleton for a function
-#' @return charstring
+#' @return invisible charstring, but mainly used for writing into the source file directly
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, Apr 2019
 #' @seealso \code{\link{selectobject}}
-#' @importFrom rstudioapi getActiveDocumentContext
+#' @importFrom rstudioapi getActiveDocumentContext insertText
 #' @export
 #'
 bdoc <- function()
@@ -61,13 +61,7 @@ out <- paste0(
 # hashes should not be picked up by Roxygen for this source code, hence added now:
 out <- paste0("#", strsplit(out, "\n", fixed=TRUE)[[1]])
 
-
-# if(Sys.info()["sysname"] == "Windows")
-# {
-# utils::writeClipboard(out)
-# message("Roxygen skeleton copied to clipboard.")
-# return(invisible(out))
-# } else
-message(paste(out, collapse="\n"))
-
+rstudioapi::insertText(text=paste(c(out, so_text), collapse="\n"), id=so_context$id)
+message("doc skeleton is added to ", so_context$path)
+return(invisible(out))
 }
