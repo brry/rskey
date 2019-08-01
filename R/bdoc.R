@@ -68,7 +68,6 @@ out <- paste0("#", strsplit(out, "\n", fixed=TRUE)[[1]])
 # message("Roxygen skeleton copied to clipboard.")
 # return(invisible(out))
 # } else
-message("Roxygen skeleton printed in console.")
-return(out)
+message(paste(out, collapse="\n"))
 
 }
