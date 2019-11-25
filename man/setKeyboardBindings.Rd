@@ -4,8 +4,11 @@
 \alias{setKeyboardBindings}
 \title{Set Rstudio keyboard bindings}
 \usage{
-setKeyboardBindings(overwrite = TRUE, removeLastYank = TRUE,
-  workdir2filedir = TRUE)
+setKeyboardBindings(
+  overwrite = TRUE,
+  removeLastYank = TRUE,
+  workdir2filedir = TRUE
+)
 }
 \arguments{
 \item{overwrite}{Logical. Should existing mappings on F3, F4, ..., F12

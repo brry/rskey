@@ -53,3 +53,8 @@ Name: bdoc
 Description: Roxygen smart skeleton
 Binding: bdoc
 Interactive: true
+
+Name: rcode
+Description: wrap Rnw source code in rcode
+Binding: rcode
+Interactive: true
