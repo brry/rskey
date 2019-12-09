@@ -19,7 +19,7 @@ if(nchar(so_text) == 0) stop("Nothing is highlighted in the RStudio Source Edito
 
 out <- paste0("\\rcode{", so_text, "}")
 rstudioapi::insertText(text=out, id=so_context$id)
-message("\\rcode is added to ", so_context$path)
+# message("\\rcode is added to ", so_context$path)
 return(invisible(out))
 }
 
