@@ -16,7 +16,7 @@ be overwritten? Still informs if this occurs. DEFAULT: TRUE}
 
 \item{removeLastYank}{Logical. Should the annoying Rstudio default to override
 "Redo" (CTRL+Y) with some weird yank be removed? 
-DEFAULT: TRUE (Ctrl+Y becomes "Redo" again)}
+DEFAULT: TRUE (CTRL+Y becomes "Redo" again)}
 
 \item{workdir2filedir}{Logical. Set CTRL+H for setWorkingDirToActiveDoc?
 DEFAULT: TRUE}
