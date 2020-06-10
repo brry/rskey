@@ -7,7 +7,9 @@
 setKeyboardBindings(
   overwrite = TRUE,
   removeLastYank = TRUE,
-  workdir2filedir = TRUE
+  workdir2filedir = TRUE,
+  roampath = paste0(Sys.getenv("APPDATA"), "/RStudio/keybindings"),
+  openfolder = TRUE
 )
 }
 \arguments{
@@ -20,6 +22,13 @@ DEFAULT: TRUE (CTRL+Y becomes "Redo" again)}
 
 \item{workdir2filedir}{Logical. Set CTRL+H for setWorkingDirToActiveDoc?
 DEFAULT: TRUE}
+
+\item{roampath}{Char. If not NULL, both files are also copied to this path, 
+e.g. C:/Users/berry/AppData/Roaming/RStudio/keybindings.
+DEFAULT: RStudio/keybindings folder at \code{\link{Sys.getenv}("APPDATA")}}
+
+\item{openfolder}{Logical: Open folder(s) after writing the files?
+Uses \code{berryFunctions\link{openFile}()}. DEFAULT: TRUE}
 }
 \value{
 Returns nothing

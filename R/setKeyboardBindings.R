@@ -5,7 +5,7 @@
 #' @return Returns nothing
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, Jan 2019
 #' @seealso \code{\link{addins}}
-#' @importFrom berryFunctions l2df removeSpace
+#' @importFrom berryFunctions l2df removeSpace openFile
 #' @importFrom utils read.table
 #' @export
 #' @param overwrite       Logical. Should existing mappings on F3, F4, ..., F12
@@ -15,83 +15,42 @@
 #'                        DEFAULT: TRUE (CTRL+Y becomes "Redo" again)
 #' @param workdir2filedir Logical. Set CTRL+H for setWorkingDirToActiveDoc?
 #'                        DEFAULT: TRUE
+#' @param roampath        Char. If not NULL, both files are also copied to this path, 
+#'                        e.g. C:/Users/berry/AppData/Roaming/RStudio/keybindings.
+#'                        DEFAULT: RStudio/keybindings folder at \code{\link{Sys.getenv}("APPDATA")}
+#' @param openfolder      Logical: Open folder(s) after writing the files?
+#'                        Uses \code{berryFunctions\link{openFile}()}. DEFAULT: TRUE
 #'
 
 setKeyboardBindings <- function(
   overwrite=TRUE, 
   removeLastYank=TRUE,
-  workdir2filedir=TRUE
+  workdir2filedir=TRUE,
+  roampath=paste0(Sys.getenv("APPDATA"),"/RStudio/keybindings"),
+  openfolder=TRUE
   )
 {
-# Demand permission:
-OK <- readline("Is it OK to create / change the 3 files at '~/.R/rstudio/keybindings'? y/n: ")
-if(tolower(substr(OK,1,1)) != "y") stop("Not setting keyboard bindings ",
-                                        "because you declined.")
-# read current keybinding files:
-file_ai <- "~/.R/rstudio/keybindings/addins.json"
-file_ed <- "~/.R/rstudio/keybindings/editor_bindings.json"
-file_rs <- "~/.R/rstudio/keybindings/rstudio_bindings.json"
-if(!dir.exists("~/.R/rstudio/keybindings")) 
-    dir.create("~/.R/rstudio/keybindings", recursive=TRUE)
-if(!file.exists(file_ai)) cat("{\n}", file=file_ai)
-if(!file.exists(file_ed)) cat("{\n}", file=file_ed)
-if(!file.exists(file_rs)) cat("{\n}", file=file_rs)
-key_ai <- readLines(file_ai, warn=FALSE)
-key_ed <- readLines(file_ed, warn=FALSE)
-key_rs <- readLines(file_rs, warn=FALSE)
-
-
-# get currently set keyboard shortcuts:
-getsetkeys <- function(x)
+# work in roaming path?
+dor <- !is.null(roampath)
+if(dor & !file.exists(roampath)) 
   {
-  source <- deparse(substitute(x))
-  if(length(x)<3) return(data.frame(fun=NULL))
-  x <- x[-c(1,length(x))]
-  x <- gsub("\"", "", x)
-  x <- gsub(",$", "", x)
-  x <- berryFunctions::l2df(strsplit(x, " :"))
-  colnames(x) <- c("fun","key")
-  x$fun <- berryFunctions::removeSpace(x$fun)
-  x$key <- berryFunctions::removeSpace(x$key)
-  x$source <- source
-  checkfor <- paste0("F", 3:12)
-  if(workdir2filedir[[1]]) checkfor <- c(checkfor, "Ctrl+H")  
-  x$exists <- x$key %in% checkfor
-  x$remove <- x$exists & overwrite[[1]]
-  x$replace <- substr(x$fun, 1,7) != "rskey::" & x$remove
-  x
-}
-setkeys <- rbind( getsetkeys(key_ai), getsetkeys(key_ed), getsetkeys(key_rs)  )
+  message("roampath ('",roampath,"') does not exist. Ignoring it.")
+  dor <- F
+  }
 
-# Don't warn about Ctrl+H if that's already set to setWorkingDirToActiveDoc:
-if(workdir2filedir) if(nrow(setkeys)>0)
-  setkeys[setkeys$fun=="setWorkingDirToActiveDoc" & setkeys$key =="Ctrl+H", 
-          c("remove","replace")] <- c(TRUE,FALSE)
+# Demand permission:
+OK <- readline(paste0("Is it OK to create / change the files at '~/.R/rstudio/keybindings'",
+                      if(dor) paste0(" and '",roampath,"'")," ? y/n: "))
+if(tolower(substr(OK,1,1)) != "y") stop("Not setting keyboard bindings ",
+                                        "because you declined permission.")
+# Create dir if needed:
+if(!dir.exists("~/.R/rstudio/keybindings"))
+    dir.create("~/.R/rstudio/keybindings", recursive=TRUE)
 
-
-if(nrow(setkeys)>0) if(any(setkeys$remove))
-{
-# Warn about overwritten entries:
-if(any(setkeys$replace)) message("Overwriting the following existing keyboard bindings:\n",
-           paste(paste0(setkeys$key, " - ", setkeys$fun)[setkeys$replace], collapse="\n"))
-# Warn about non-overwritten entries:
-not_ov <- setkeys$exists & !setkeys$remove
-if(any(not_ov)) message("The following keyboard bindings already existed and are not overwritten:\n",
-                         paste(paste0(setkeys$key, " - ", setkeys$fun)[not_ov], collapse="\n"))
-# remove entries to be overwritten (elsewhere):
-setkeys$remove[substr(setkeys$fun, 1,7) == "rskey::" & is.na(setkeys$key)] <- TRUE
-rm_ai <- setkeys[setkeys$source=="key_ai",]$remove
-rm_ed <- setkeys[setkeys$source=="key_ed",]$remove
-rm_rs <- setkeys[setkeys$source=="key_rs",]$remove
-if(any(rm_ai)) key_ai <- key_ai[- (which(rm_ai)+1)]
-if(any(rm_ed)) key_ed <- key_ed[- (which(rm_ed)+1)]
-if(any(rm_rs)) key_rs <- key_rs[- (which(rm_rs)+1)]
-}
-
-
-# Add new entries:
-
-new <- read.table(as.is=TRUE, header=TRUE, sep="|",  strip.white=TRUE, text="fun | key
+# new entries to be set:
+# addins.json
+new_a <- read.table(as.is=TRUE, header=TRUE, sep="|",  strip.white=TRUE, text="
+fun                    | key
 rskey::str_addin       | F3
 rskey::head_addin      | F4
 rskey::tail_addin      | F5
@@ -102,40 +61,71 @@ rskey::dim_addin       | F9
 rskey::class_addin     | F10
 rskey::plot_addin      | F11
 rskey::hist_addin      | F12
-rskey::rcode           | Ctrl+,")
-if(nrow(setkeys)>0) new <- new[!new$key %in% setkeys[!setkeys$remove,"key"]   , ]
+rskey::rcode           | Ctrl+,
+rskey::bdoc            | Ctrl+Alt+Y")
 
-if(nrow(new)>0)
-{
- to_add <- paste0("    \"",new$fun,"\" : \"",new$key,"\"")
- to_add <- paste(to_add, collapse=",\n")
- if(length(key_ai)>2) to_add <- paste0(to_add,",")
- key_ai <- c(key_ai[1], to_add, key_ai[-1])
-} 
+# rstudio_bindings.json
+new_r <- read.table(as.is=TRUE, header=TRUE, sep="|",  strip.white=TRUE, text="
+fun                      | key
+setWorkingDirToActiveDoc | Ctrl+H
+pasteLastYank            | ")
+new_r <- new_r[c(workdir2filedir, removeLastYank),]
 
 
-if(workdir2filedir)
+setkeys <- function(path, file, new)
   {
-  to_add <- "    \"setWorkingDirToActiveDoc\" : \"Ctrl+H\""
-  if(length(key_rs)>2) to_add <- paste0(to_add,",")
-  key_rs <- c(key_rs[1], to_add, key_rs[-1])
-  } 
+  # read current keybindings:
+  fn <- paste0(path, "/", file)
+  if(!file.exists(fn)) cur <- "" else
+  cur <- readLines(fn, warn=FALSE)
+  cur <- cur[-c(1,length(cur))] # leading and trailing curly bracket
+  cur <- gsub(",$", "", cur)
+  cur <- gsub("\"", "", cur)
+  # split by a single colon: https://stackoverflow.com/questions/62314152
+  cur <- strsplit(cur, "(?<!:):(?!:)", perl=TRUE)
+  cur <- if(length(cur)>0) berryFunctions::l2df(cur) else read.csv(text="a,b")
+  colnames(cur) <- c("fun","key")
+  cur$fun <- berryFunctions::removeSpace(cur$fun)
+  cur$key <- berryFunctions::removeSpace(cur$key)
+  cur <- unique(cur) # ignore duplicates
+  # warn about (non) overwritten entries, ignoring unchanged entries:
+  exi <- cur$key %in% new$key
+  exi <- exi & ! paste(cur$fun,cur$key) %in% paste(new$fun,new$key)
+  exi <- exi & cur$key != ""
+  warnlist <- paste(paste0(cur$key, " - ", cur$fun)[exi], collapse="\n")
+  eximsg <- if(overwrite) "Overwriting the following existing keyboard bindings" else
+       "The following keyboard bindings already existed and are not overwritten"
+  if(any(exi)) message(eximsg, " in ", fn, ":\n", warnlist)
+  # remove entries to (not) be overwritten:
+  if(overwrite) cur <- cur[!exi,] else  new <- new[!new$key %in% cur$key[exi], ]
+  # format new list:
+  final <- rbind(cur, new)
+  final <- na.omit(unique(final))
+  dfun <- final$fun[duplicated(final$fun)]
+  dkey <- final$key[duplicated(final$key)]
+  if(length(dfun)>0 | length(dkey)>0) message("Manually remove duplicate entries in ", 
+                                       fn, ":\n", toString(c(dfun,dkey)))
+  final$fun <- paste0('"', final$fun, '"')
+  final$key <- paste0('"', final$key, '"')
+  final <- paste0(final$fun, ": ", final$key, collapse=",\n")
+  # Write new file:
+  cat("{\n", file=fn, append=FALSE)
+  cat(final, file=fn, append=TRUE)
+  cat("\n}", file=fn, append=TRUE)
+  }
 
+# Actually set keys:
 
-if(removeLastYank) if(!any(grepl("pasteLastYank", key_rs)))
+setkeys("~/.R/rstudio/keybindings", "rstudio_bindings.json", new_r)
+setkeys("~/.R/rstudio/keybindings",           "addins.json", new_a)
+if(dor) setkeys(roampath, "rstudio_bindings.json", new_r)
+if(dor) setkeys(roampath,           "addins.json", new_a)
+
+if(openfolder)
   {
-  to_add <- "    \"pasteLastYank\" : \"\""
-  if(length(key_rs)>2) to_add <- paste0(to_add,",")
-  key_rs <- c(key_rs[1], to_add, key_rs[-1])
-  } 
-
-
-# Write new contents to the files:
-writeLines(key_ai, file_ai)
-writeLines(key_ed, file_ed)
-writeLines(key_rs, file_rs)
-
+  berryFunctions::openFile("~/.R/rstudio/keybindings")
+  berryFunctions::openFile(roampath)
+  }
 message("The keyboard shortcuts were successfully set.\n",
         "Please restart Rstudio now for the changes to take effect.")
-
 }

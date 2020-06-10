@@ -1,5 +1,10 @@
 ### rskey
 
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version-last-release/rskey)](https://cran.r-project.org/package=rskey) 
+[![downloads](http://cranlogs.r-pkg.org/badges/rskey)](https://www.r-pkg.org/services)
+[![Rdoc](http://www.rdocumentation.org/badges/version/rskey)](https://www.rdocumentation.org/packages/rskey)
+!["rskey dependencies"](https://tinyverse.netlify.com/badge/rskey)
+
 ### rstudio addins for Keyboard shortcuts
 
 Rstudio addins to examine selected code in the Rstudio editor.  
