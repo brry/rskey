@@ -25,6 +25,7 @@ DEFAULT: TRUE}
 
 \item{roampath}{Char. If not NULL, both files are also copied to this path, 
 e.g. C:/Users/berry/AppData/Roaming/RStudio/keybindings.
+Seems to be irrelevant in Rstudio 1.4.
 DEFAULT: RStudio/keybindings folder at \code{\link{Sys.getenv}("APPDATA")}}
 
 \item{openfolder}{Logical: Open folder(s) after writing the files?

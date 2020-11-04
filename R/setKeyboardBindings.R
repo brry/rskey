@@ -17,6 +17,7 @@
 #'                        DEFAULT: TRUE
 #' @param roampath        Char. If not NULL, both files are also copied to this path, 
 #'                        e.g. C:/Users/berry/AppData/Roaming/RStudio/keybindings.
+#'                        Seems to be irrelevant in Rstudio 1.4.
 #'                        DEFAULT: RStudio/keybindings folder at \code{\link{Sys.getenv}("APPDATA")}
 #' @param openfolder      Logical: Open folder(s) after writing the files?
 #'                        Uses \code{berryFunctions\link{openFile}()}. DEFAULT: TRUE
@@ -82,7 +83,7 @@ setkeys <- function(path, file, new)
   cur <- gsub(",$", "", cur)
   cur <- gsub("\"", "", cur)
   # split by a single colon: https://stackoverflow.com/questions/62314152
-  cur <- strsplit(cur, "(?<!:):(?!:)", perl=TRUE)
+  cur <- strsplit(cur, "(?<!:):(?!:)", perl=TRUE) # strsplit(cur, "\\b:\\b") would not handle surrounding spaces
   cur <- if(length(cur)>0) berryFunctions::l2df(cur) else read.csv(text="a,b")
   colnames(cur) <- c("fun","key")
   cur$fun <- berryFunctions::removeSpace(cur$fun)
@@ -124,7 +125,7 @@ if(dor) setkeys(roampath,           "addins.json", new_a)
 if(openfolder)
   {
   berryFunctions::openFile("~/.R/rstudio/keybindings")
-  berryFunctions::openFile(roampath)
+  if(dor) berryFunctions::openFile(roampath)
   }
 message("The keyboard shortcuts were successfully set.\n",
         "Please restart Rstudio now for the changes to take effect.")
