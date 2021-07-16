@@ -6,7 +6,8 @@
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, Jan 2019
 #' @seealso \code{\link{addins}}
 #' @importFrom berryFunctions l2df removeSpace openFile
-#' @importFrom utils read.table
+#' @importFrom utils read.table read.csv
+#' @importFrom stats na.omit
 #' @export
 #' @param overwrite       Logical. Should existing mappings on F3, F4, ..., F12
 #'                        be overwritten? Still informs if this occurs. DEFAULT: TRUE
