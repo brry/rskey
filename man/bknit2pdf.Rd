@@ -11,15 +11,15 @@ bknit2pdf(open = TRUE, clean = TRUE, ...)
 
 \item{clean}{Clean up temporary files? DEFAULT: TRUE (unlike in tools::texi2pdf)}
 
-\item{\dots}{Further arguments passed to \code{knitr::\link{knit2pdf}}}
+\item{\dots}{Further arguments passed to \code{knitr::\link{knit}}}
 }
 \value{
 invisible charstring with file name
 }
 \description{
-pass the filename (selected window) to \code{knitr::knit2pdf}.
+pass the filename (selected window) to \code{knitPres::rnw2pdf}.
 Developed when MikTex and Rstudio stopped talking to each other. 
-Can be schorcut to e.g. CTRL + SHIFT + K
+Can be schorcut to e.g. CTRL + K
 }
 \author{
 Berry Boessenkool, \email{berry-b@gmx.de}, Jul 2021

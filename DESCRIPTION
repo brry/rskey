@@ -1,7 +1,7 @@
 Package: rskey
 Title: Create Custom 'Rstudio' Keyboard Shortcuts
-Version: 0.4.7
-Date: 2021-07-16
+Version: 0.4.8
+Date: 2021-07-19
 Authors@R: person("Berry", "Boessenkool", email = "berry-b@gmx.de", role = c("aut", "cre"))
 Description: Create custom keyboard shortcuts to examine code selected in the 'Rstudio' editor.
              F3 can for example yield 'str(selection)' and F7 open the source
