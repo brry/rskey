@@ -59,6 +59,11 @@ Description: wrap Rnw source code in rcode
 Binding: rcode
 Interactive: true
 
+Name: href
+Description: wrap Rnw source code URL in href
+Binding: href
+Interactive: true
+
 Name: bknit2pdf
 Description: pass Rnw document to knit2pdf
 Binding: bknit2pdf
