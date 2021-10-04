@@ -10,16 +10,12 @@
 #' @param clean Clean up temporary files? DEFAULT: TRUE (unlike in tools::texi2pdf)
 #' @param \dots Further arguments passed to \code{knitr::\link{knit}}
 #'
-bknit2pdf <- function(open=FALSE, clean=TRUE, ...)
+bknit2pdf <- function(open=TRUE, clean=TRUE, ...)
 {
 # save changes:
 rstudioapi::documentSave()
- 
-# extract file name of selected window tab:
-rnwfile <- try(rstudioapi::getSourceEditorContext(), silent=TRUE)
-if(inherits(rnwfile, "try-error")) 
-  stop("rstudioapi::getSourceEditorContext failed:\n", rnwfile , call.=FALSE) 
-rnwfile <- rnwfile$path
+# extract file name of currently open, or last focused, RStudio document.
+rnwfile <- rstudioapi::documentPath()
 
 # Test if github package is installed: 
 if(!requireNamespace("knitPres", quietly=TRUE))

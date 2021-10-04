@@ -17,7 +17,7 @@ if(nchar(so_text) == 0) stop("Nothing is highlighted in the RStudio Source Edito
                           "Please ensure a function argument section is highlighted.",
                             call.=FALSE)
 
-out <- paste0("\\href{", so_text, "}{isplaytext}")
+out <- paste0("\\href{", so_text, "}{displaytext}")
 rstudioapi::insertText(text=out, id=so_context$id)
 return(invisible(out))
 }
