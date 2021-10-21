@@ -50,11 +50,16 @@ tail_addin <- function(obj=selectobject()) {
 #' @rdname addins
 #' 
 View_addin <- function(obj=selectobject()) {
-  message("View(", obj$code, ")")
+  name <- obj$code
+  message("View(", name, ")")
   obj <- obj$object
   if(!is.data.frame(obj)) try( obj <- as.data.frame(obj)  )
-  View(obj)
+  # https://github.com/r-spatial/sf/issues/618
+  if(requireNamespace("rstudioapi", quietly=TRUE) && rstudioapi::isAvailable())
+  .rs.viewHook(x=obj, title=name) else View(obj, title=name)
   }
+# Suppress CRAN check note 'no visible binding for global variable':
+if(getRversion() >= "2.15.1")  utils::globalVariables(".rs.viewHook")
 
 #' @export
 #' @importFrom utils packageVersion
