@@ -25,6 +25,7 @@ if(!requireNamespace("knitPres", quietly=TRUE))
   return()
   }
 
+rstudioapi::executeCommand("activateConsole") # Focus to Console
 knitPres::rnw2pdf(rnwfile, open=open, clean=clean, ...)
 return(invisible())
 }
