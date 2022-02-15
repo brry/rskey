@@ -68,3 +68,8 @@ Name: bknit2pdf
 Description: pass Rnw document to knit2pdf
 Binding: bknit2pdf
 Interactive: true
+
+Name: unmlaut2ascii
+Description: convert Umlaute to ASCII
+Binding: unmlaut2ascii
+Interactive: true
