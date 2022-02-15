@@ -5,7 +5,7 @@
 #' @return Returns nothing
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, Jan 2019
 #' @seealso \code{\link{addins}}
-#' @importFrom berryFunctions l2df removeSpace openFile
+#' @importFrom berryFunctions l2df openFile
 #' @importFrom utils read.table read.csv
 #' @importFrom stats na.omit
 #' @export
@@ -87,8 +87,8 @@ setkeys <- function(path, file, new)
   cur <- strsplit(cur, "(?<!:):(?!:)", perl=TRUE) # strsplit(cur, "\\b:\\b") would not handle surrounding spaces
   cur <- if(length(cur)>0) berryFunctions::l2df(cur) else read.csv(text="a,b")
   colnames(cur) <- c("fun","key")
-  cur$fun <- berryFunctions::removeSpace(cur$fun)
-  cur$key <- berryFunctions::removeSpace(cur$key)
+  cur$fun <- trimws(cur$fun)
+  cur$key <- trimws(cur$key)
   cur <- unique(cur) # ignore duplicates
   # warn about (non) overwritten entries, ignoring unchanged entries:
   exi <- cur$key %in% new$key
