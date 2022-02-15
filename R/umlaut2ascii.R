@@ -10,8 +10,8 @@
 umlaut2ascii <- function()
 {
 doc <- rstudioapi::getSourceEditorContext()
-#x <- readLines(con=doc$path, encoding="UTF-8")
-x <- doc$contents
+x <- readLines(con=doc$path, encoding="UTF-8")
+#x <- doc$contents # improper string escaping
 n <- length(x)
 if(x[n]=="") x <- x[-n] # remove last line if empy
 #x <- stringi::stri_escape_unicode(x) # way too aggressive

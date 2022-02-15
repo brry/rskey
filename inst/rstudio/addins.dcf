@@ -69,7 +69,7 @@ Description: pass Rnw document to knit2pdf
 Binding: bknit2pdf
 Interactive: true
 
-Name: unmlaut2ascii
+Name: umlaut2ascii
 Description: convert Umlaute to ASCII
-Binding: unmlaut2ascii
+Binding: umlaut2ascii
 Interactive: true
