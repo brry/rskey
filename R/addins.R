@@ -24,8 +24,19 @@
 #'            (potentially truncated version).
 #'            For funSource_addin, only the function name should be highlighted.
 #'            DEFAULT: Rstudio addin selected code from \code{\link{selectobject}}
+#' @param use_glimpse Logical: use \code{pillar::\link[pillar]{glimpse}} instead of
+#'             \code{base::\link{str}}? Can be set to TRUE with 
+#'             \code{options(rskey_glimpse=TRUE)}. To set permananently, use:
+#'             \code{cat("options(rskey_glimpse=TRUE)\n", file="~/.Rprofile", append=TRUE)}.
+#'             DEFAULT: getOption("rskey_glimpse", FALSE)
 #' 
-str_addin <- function(obj=selectobject()) {
+str_addin <- function(obj=selectobject(), 
+                      use_glimpse=getOption("rskey_glimpse", FALSE)) {
+  if(isTRUE(use_glimpse) && requireNamespace("pillar", quietly=TRUE))
+    {
+    message("pillar::glimpse(", obj$code, ")")
+    return(pillar::glimpse(obj$object))
+    }
   message("str(", obj$code, ", max.level=3)")
   str(obj$object, max.level=3)
   }
