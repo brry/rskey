@@ -12,6 +12,7 @@
 \alias{class_addin}
 \alias{plot_addin}
 \alias{hist_addin}
+\alias{unique_addin}
 \title{Rstudio keyboard shortcuts on F-keys}
 \usage{
 str_addin(
@@ -36,6 +37,8 @@ class_addin(obj = selectobject())
 plot_addin(obj = selectobject())
 
 hist_addin(obj = selectobject())
+
+unique_addin(obj = selectobject())
 }
 \arguments{
 \item{obj}{List containing \code{object} (some R object) \code{fullcode}

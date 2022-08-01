@@ -128,3 +128,11 @@ hist_addin <- function(obj=selectobject()) {
   hist(obj$object, col="moccasin", breaks=50, las=1,
        main=paste("Histogram of", obj$code), xlab=obj$code)
   }
+
+#' @export
+#' @rdname addins
+#' 
+unique_addin <- function(obj=selectobject()) {
+  message("unique(", obj$code, ")")
+  unique(obj$object)
+  }

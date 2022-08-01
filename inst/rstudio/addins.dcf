@@ -49,6 +49,11 @@ Description: hist(currently_marked_text)
 Binding: hist_addin
 Interactive: true
 
+Name: F13 unique of an object
+Description: unique(currently_marked_text)
+Binding: unique_addin
+Interactive: true
+
 Name: bdoc
 Description: Roxygen smart skeleton
 Binding: bdoc
