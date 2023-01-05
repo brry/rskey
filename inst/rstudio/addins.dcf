@@ -78,3 +78,9 @@ Name: umlaut2ascii
 Description: convert Umlaute to ASCII
 Binding: umlaut2ascii
 Interactive: true
+
+Name: pycheck
+Description: run python exercise development test
+Binding: pycheck
+Interactive: true
+
