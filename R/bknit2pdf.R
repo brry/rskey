@@ -8,7 +8,7 @@
 #' @export
 #' @param open  Open pdf file?
 #' @param clean Clean up temporary files? DEFAULT: TRUE (unlike in tools::texi2pdf)
-#' @param \dots Further arguments passed to \code{knitr::\link{knit}}
+#' @param \dots Further arguments passed to \code{knitr::knit}
 #'
 bknit2pdf <- function(open=TRUE, clean=TRUE, ...)
 {

@@ -8,9 +8,8 @@ Description: Create custom keyboard shortcuts to examine code selected in the 'R
              code of CRAN and base package functions on 'github'.
 Imports: graphics, utils,
   rstudioapi (>= 0.5),
-  knitr,
   berryFunctions (>= 1.17.21)
-Suggests: knitPres, pillar
+Suggests: knitr, knitPres, pillar
 License: GPL(>= 2)
 Encoding: UTF-8
 RoxygenNote: 7.2.3

@@ -11,7 +11,7 @@ bknit2pdf(open = TRUE, clean = TRUE, ...)
 
 \item{clean}{Clean up temporary files? DEFAULT: TRUE (unlike in tools::texi2pdf)}
 
-\item{\dots}{Further arguments passed to \code{knitr::\link{knit}}}
+\item{\dots}{Further arguments passed to \code{knitr::knit}}
 }
 \value{
 invisible charstring with file name
