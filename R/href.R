@@ -1,4 +1,4 @@
-#' @title wrap URL in Rnw source code in "\\href{link}{text}"
+#' @title wrap URL in Rnw source code in "href link text"
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, Oct 2021
 #' @seealso \code{\link{selectobject}}, \code{\link{rcode}}
 #' @importFrom rstudioapi getActiveDocumentContext insertText

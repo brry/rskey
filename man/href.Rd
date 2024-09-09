@@ -2,12 +2,12 @@
 % Please edit documentation in R/href.R
 \name{href}
 \alias{href}
-\title{wrap URL in Rnw source code in "\\href{link}{text}"}
+\title{wrap URL in Rnw source code in "href link text"}
 \usage{
 href()
 }
 \description{
-wrap URL in Rnw source code in "\\href{link}{text}"
+wrap URL in Rnw source code in "href link text"
 }
 \seealso{
 \code{\link{selectobject}}, \code{\link{rcode}}
