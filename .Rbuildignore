@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 .Rprofile
 ^cran-comments\.md$
+.github/

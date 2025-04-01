@@ -12,7 +12,7 @@ Rstudio addins to examine selected code in the Rstudio editor.
 digital-dharma/RStudioAddIns).*
 
 I find it very useful to bind the addins to keyboard shortcuts like this (and
-[label](https://github.com/brry/rstudioberry/raw/master/inst/keyboardRlabels.ods)
+[label](https://github.com/brry/rskey/raw/master/inst/keyboardRlabels.ods)
 the keyboard):
 
 * F3 - structure of an object - `str(selected_code)`
@@ -73,10 +73,10 @@ Any idea to solve this kind of limitation is welcome!
 #### examples
 Examples on links opened by `funSource`:
 
-Functions in CRAN packages - `spatstat::rescale`:  
-<https://github.com/cran/spatstat/blob/master/R/rescale.R>  
-[https://github.com/search?q=rescale function repo:cran/spatstat+path:R](https://github.com/search?q=rescale%20function%20repo:cran/spatstat+path:R)
+Functions in CRAN packages - `ggplot2::aes`:  
+<https://github.com/cran/ggplot2/blob/master/R/aes.R>  
+[https://github.com/search?q=aes function repo:cran/ggplot2+path:R](https://github.com/search?q=aes%20function%20repo:cran/ggplot2+path:R)
 
 Functions in base packages - `graphics::hist`:  
-<https://github.com/wch/r-source/tree/trunk/src/library/graphics/R/hist.R>  
+<https://github.com/wch/r-source/blob/trunk/src/library/graphics/R/hist.R>  
 [https://github.com/search?q=hist function repo:wch/r-source+path:src/library/graphics/R](https://github.com/search?q=hist%20function%20repo:wch/r-source+path:src/library/graphics/R)
