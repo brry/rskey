@@ -1,6 +1,6 @@
 Package: rskey
 Title: Create Custom 'Rstudio' Keyboard Shortcuts
-Version: 0.4.16
+Version: 0.4.17
 Date: 2025-04-01
 Authors@R: person("Berry", "Boessenkool", email = "berry-b@gmx.de", role = c("aut", "cre"))
 Description: Create custom keyboard shortcuts to examine code selected in the 'Rstudio' editor.
@@ -9,7 +9,7 @@ Description: Create custom keyboard shortcuts to examine code selected in the 'R
 Imports: graphics, utils,
   rstudioapi (>= 0.5),
   berryFunctions (>= 1.17.21)
-Suggests: knitr, knitPres, pillar, codeoceanR
+Suggests: knitr, pillar
 License: GPL(>= 2)
 Encoding: UTF-8
 RoxygenNote: 7.3.2

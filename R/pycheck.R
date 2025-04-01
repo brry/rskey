@@ -3,4 +3,13 @@
 #' @seealso \code{\link{selectobject}}
 #' @export
 #'
-pycheck <- function() codeoceanR:::py_local_score()
+pycheck <- function() 
+{
+ if(!requireNamespace("codeoceanR", quietly=TRUE))
+  {
+  warning("R package codeoceanR must be available for this function.",
+          "\nSee   https://github.com/openHPI/codeoceanR#setup-once-only")
+  return()
+  }
+ codeoceanR:::py_local_score()
+}
