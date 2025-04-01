@@ -7,7 +7,7 @@
 #' @importFrom rstudioapi getActiveDocumentContext
 #' @importFrom utils tail head
 #' @references Heavily borrowed from digital-dharma/RStudioAddIns (no longer online)
-#' @seealso \code{\link{addins}, \link{funSource}}
+#' @seealso \code{\link{addins}}, \code{\link[berryFunctions]{funSource}}
 #' @examples
 #' # see str_addin
 #' 

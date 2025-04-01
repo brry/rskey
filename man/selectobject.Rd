@@ -26,7 +26,7 @@ Also works in browser mode, albeit not in the code_browser window.
 Heavily borrowed from digital-dharma/RStudioAddIns (no longer online)
 }
 \seealso{
-\code{\link{addins}, \link{funSource}}
+\code{\link{addins}}, \code{\link[berryFunctions]{funSource}}
 }
 \author{
 Berry Boessenkool, \email{berry-b@gmx.de}, May 2017
