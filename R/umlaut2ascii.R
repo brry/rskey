@@ -4,7 +4,7 @@
 #' @return path, invisibly
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, Feb 2022
 #' @keywords file
-#' @seealso [berryFunctions::convertUmlaut]
+#' @seealso \code{berryFunctions\link[berryFunctions]{convertUmlaut}()}
 #' @export
 #'
 umlaut2ascii <- function()

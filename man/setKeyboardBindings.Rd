@@ -29,7 +29,7 @@ Seems to be irrelevant in Rstudio 1.4.
 DEFAULT: RStudio/keybindings folder at \code{\link{Sys.getenv}("APPDATA")}}
 
 \item{openfolder}{Logical: Open folder(s) after writing the files?
-Uses \code{berryFunctions\link{openFile}()}. DEFAULT: TRUE}
+Uses \code{berryFunctions\link[berryFunctions]{openFile}()}. DEFAULT: TRUE}
 }
 \value{
 Returns nothing

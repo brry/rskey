@@ -14,7 +14,7 @@ Convert Umlaute in Script to ASCII. Less aggressive than
 <https://github.com/dreamRs/prefixer/#not-ascii>
 }
 \seealso{
-[berryFunctions::convertUmlaut]
+\code{berryFunctions\link[berryFunctions]{convertUmlaut}()}
 }
 \author{
 Berry Boessenkool, \email{berry-b@gmx.de}, Feb 2022

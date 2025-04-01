@@ -3,3 +3,7 @@
 .Rprofile
 ^cran-comments\.md$
 .github/
+R/pycheck.R
+man/pycheck.Rd
+R/bknit2pdf.R
+man/bknit2pdf.Rd

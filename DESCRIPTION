@@ -1,6 +1,6 @@
 Package: rskey
 Title: Create Custom 'Rstudio' Keyboard Shortcuts
-Version: 0.4.18
+Version: 0.4.19
 Date: 2025-04-01
 Authors@R: person("Berry", "Boessenkool", email = "berry-b@gmx.de", role = c("aut", "cre"))
 Description: Create custom keyboard shortcuts to examine code selected in the 'Rstudio' editor.
