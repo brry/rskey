@@ -63,6 +63,7 @@ rskey::dim_addin       | F9
 rskey::class_addin     | F10
 rskey::plot_addin      | F11
 rskey::hist_addin      | F12
+rskey::score           | Ctrl+Shift+Y
 rskey::rcode           | Ctrl+,
 rskey::bdoc            | Ctrl+Alt+Y")
 
