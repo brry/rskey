@@ -7,3 +7,5 @@
 #man/pycheck.Rd
 #R/bknit2pdf.R
 #man/bknit2pdf.Rd
+^\.positai$
+^\.claude$
