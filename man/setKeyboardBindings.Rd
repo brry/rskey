@@ -4,31 +4,10 @@
 \alias{setKeyboardBindings}
 \title{Set Rstudio keyboard bindings}
 \usage{
-setKeyboardBindings(
-  overwrite = TRUE,
-  removeLastYank = TRUE,
-  workdir2filedir = TRUE,
-  roampath = paste0(Sys.getenv("APPDATA"), "/RStudio/keybindings"),
-  openfolder = TRUE
-)
+setKeyboardBindings(openfolder = TRUE)
 }
 \arguments{
-\item{overwrite}{Logical. Should existing mappings on F3, F4, ..., F12
-be overwritten? Still informs if this occurs. DEFAULT: TRUE}
-
-\item{removeLastYank}{Logical. Should the annoying Rstudio default to override
-"Redo" (CTRL+Y) with some weird yank be removed? 
-DEFAULT: TRUE (CTRL+Y becomes "Redo" again)}
-
-\item{workdir2filedir}{Logical. Set CTRL+H for setWorkingDirToActiveDoc?
-DEFAULT: TRUE}
-
-\item{roampath}{Char. If not NULL, both files are also copied to this path, 
-e.g. C:/Users/berry/AppData/Roaming/RStudio/keybindings.
-Seems to be irrelevant in Rstudio 1.4.
-DEFAULT: RStudio/keybindings folder at \code{\link{Sys.getenv}("APPDATA")}}
-
-\item{openfolder}{Logical: Open folder(s) after writing the files?
+\item{openfolder}{Logical: Open folders after writing the files?
 Uses \code{berryFunctions\link[berryFunctions]{openFile}()}. DEFAULT: TRUE}
 }
 \value{
@@ -37,11 +16,10 @@ Returns nothing
 \description{
 Set Rstudio keyboard bindings as mapped 
              on \url{https://github.com/brry/rskey#rskey}.
-             \bold{By default, this overwrites existing F3:F12 mappings!}
 }
 \seealso{
 \code{\link{addins}}
 }
 \author{
-Berry Boessenkool, \email{berry-b@gmx.de}, Jan 2019
+Berry Boessenkool, \email{berry-b@gmx.de}, Jan 2019, May 2026
 }
