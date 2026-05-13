@@ -2,8 +2,7 @@
 
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version-last-release/rskey)](https://cran.r-project.org/package=rskey) 
 [![downloads](http://cranlogs.r-pkg.org/badges/rskey)](https://www.r-pkg.org/services)
-[![Rdoc](http://www.rdocumentation.org/badges/version/rskey)](https://www.rdocumentation.org/packages/rskey)
-!["rskey dependencies"](https://tinyverse.netlify.com/badge/rskey)
+[![Rdoc](https://api.rdocumentation.org/badges/version/rskey)](https://www.rdocumentation.org/packages/rskey)
 
 ### rstudio addins for Keyboard shortcuts
 
@@ -33,8 +32,8 @@ if(!requireNamespace("remotes")) install.packages("remotes")
 remotes::install_github("brry/rskey")
 
 # either set all bindings:
-rskey::setKeyboardBindings(overwrite=TRUE)
-# by default also sets CTRL+Y for ReDo and CTRL+H for setWorkingDirToActiveDoc
+rskey::setKeyboardBindings()
+# also sets CTRL+Y for ReDo and CTRL+H for setWorkingDirToActiveDoc
 
 # or manually:
 # Rstudio - Tools - Modify Keyboard Shortcurts
