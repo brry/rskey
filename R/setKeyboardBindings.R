@@ -52,6 +52,7 @@ cat('{
 "roxygenizePackage": "",
 "quartoRenderDocument": "Alt+S"
 }', file=p1)
+mod_key <- if(Sys.info()[["sysname"]] == "Darwin") "Cmd" else "Ctrl"
 cat('{
 "rskey::str_addin": "F3",
 "rskey::head_addin": "F4",
@@ -63,10 +64,10 @@ cat('{
 "rskey::class_addin": "F10",
 "rskey::plot_addin": "F11",
 "rskey::hist_addin": "F12",
-"rskey::rcode": "Ctrl+R",
-"rskey::bknit2pdf": "Ctrl+K",
-"rskey::score": "Ctrl+Shift+Y"
-}', file=p2)
+"rskey::rcode": "',mod_key,'+R",
+"rskey::bknit2pdf": "',mod_key,'+K",
+"rskey::score": "',mod_key,'+Shift+Y"
+}', sep="", file=p2)
 
 # Wrap up:
 if(openfolder) berryFunctions::openFile(dirname(c(p1,p2)))
