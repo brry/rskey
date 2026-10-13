@@ -4,11 +4,11 @@
 \alias{setKeyboardBindings}
 \title{Set Rstudio keyboard bindings}
 \usage{
-setKeyboardBindings(openfolder = TRUE)
+setKeyboardBindings(openfolder = FALSE)
 }
 \arguments{
 \item{openfolder}{Logical: Open folders after writing the files?
-Uses \code{berryFunctions\link[berryFunctions]{openFile}()}. DEFAULT: TRUE}
+Uses \code{berryFunctions::\link[berryFunctions]{openFile}()}. DEFAULT: FALSE}
 }
 \value{
 Returns nothing

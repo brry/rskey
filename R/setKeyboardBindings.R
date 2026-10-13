@@ -7,11 +7,11 @@
 #' @importFrom berryFunctions newFilename openFile
 #' @export
 #' @param openfolder      Logical: Open folders after writing the files?
-#'                        Uses \code{berryFunctions\link[berryFunctions]{openFile}()}. DEFAULT: TRUE
+#'                        Uses \code{berryFunctions::\link[berryFunctions]{openFile}()}. DEFAULT: FALSE
 #'
 
 setKeyboardBindings <- function(
-  openfolder=TRUE
+  openfolder=FALSE
   )
 {
 # Set paths
@@ -28,6 +28,8 @@ ok <- readline("Can I write files as in the message? y/n: ")
 if(!tolower(substr(ok,1,1))=="y") stop("You did not give write access.")
 
 # Create dir if needed:
+d1 <- dirname(p1)
+if(!dir.exists(d1)) dir.create(d1, recursive=TRUE)
 d2 <- dirname(p2)
 if(!dir.exists(d2)) dir.create(d2, recursive=TRUE)
 

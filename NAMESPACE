@@ -19,17 +19,25 @@ export(summary_addin)
 export(tail_addin)
 export(umlaut2ascii)
 export(unique_addin)
-importFrom(berryFunctions,funSource)
-importFrom(berryFunctions,newFilename)
-importFrom(berryFunctions,openFile)
-importFrom(graphics,hist)
-importFrom(graphics,plot)
-importFrom(rstudioapi,documentSave)
-importFrom(rstudioapi,getActiveDocumentContext)
-importFrom(rstudioapi,getSourceEditorContext)
-importFrom(rstudioapi,insertText)
-importFrom(utils,View)
-importFrom(utils,head)
-importFrom(utils,packageVersion)
-importFrom(utils,str)
-importFrom(utils,tail)
+importFrom(berryFunctions,
+  funSource,
+  newFilename,
+  openFile
+)
+importFrom(graphics,
+  hist,
+  plot
+)
+importFrom(rstudioapi,
+  documentSave,
+  getActiveDocumentContext,
+  getSourceEditorContext,
+  insertText
+)
+importFrom(utils,
+  View,
+  head,
+  packageVersion,
+  str,
+  tail
+)
