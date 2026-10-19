@@ -52,7 +52,6 @@ p2 <- replaceFile(p2)
 wrap_key <- if(Sys.info()[["sysname"]] == "Darwin") "Ctrl+W" else "Alt+W"
 cat('{
 "pasteLastYank": "",
-"setTerminalToCurrentDirectory": "",
 "setWorkingDirToActiveDoc": "Ctrl+H",
 "knitDocument": "",
 "roxygenizePackage": "",

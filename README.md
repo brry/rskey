@@ -16,6 +16,7 @@ Rstudio addins to examine selected code in the Rstudio editor.
 install.packages("remotes")
 remotes::install_github("brry/rskey")
 rskey::setKeyboardBindings()
+# creates backup files if already present
 ```
 
 * `F3`: structure of an object - `str(selected_code)`
@@ -32,11 +33,14 @@ rskey::setKeyboardBindings()
 * `CTRL/CMD` + `Y`: redo (by removing it from paste last yank)
 * `CTRL/CMD` + `H`: set working dir to active document
 * `ALT` + `S`: quarto render document 
-* `ALT`+`W`, or `control`+`W`: toggle line wrapping
+* `ALT`+`W`, or `control`+`W`: toggle line wrapping (depending on OS)
 * `CTRL/CMD` + `Shift` + `Y`: score for [course](https://github.com/brry/fpsetup#exercises)
-* *for my convenience also sets:*
+* *for my convenience sets:*
 * `CTRL/CMD` + `R`: add `\rcode{text}` around text in an Rnw document
-* `CTRL/CMD` + `K`: knit Rnw file to pdf rskey::bknit2pdf (**remove if unwanted**)
+* `CTRL/CMD` + `K`: knit Rnw file to pdf rskey::bknit2pdf (**set to knitDocument if wanted**)
+* *removes*:
+* `CTRL/CMD` + `Shift` + `D`: roxygenizePackage to enable duplicate text/line inside a package
+* `CTRL/CMD` + `Shift` + `K`: knitDocument as I prefer `CTRL/CMD` + `K`
 
 selectively (un)set some manually:
 
