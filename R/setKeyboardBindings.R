@@ -15,13 +15,17 @@ setKeyboardBindings <- function(
   )
 {
 # Set paths
-kdir <- 
-  if(.Platform$OS.type == "windows") 
-    paste0(Sys.getenv("APPDATA"), "/RStudio/keybindings/")
-  else
-    file.path(Sys.getenv("XDG_CONFIG_HOME", "~/.config"), "rstudio/keybindings/")
-p1 <- paste0(kdir, "rstudio_bindings.json")
-p2 <- paste0(kdir, "addins.json")
+if(.Platform$OS.type == "windows")
+  {
+  kdir <- file.path(Sys.getenv("APPDATA"), "RStudio", "keybindings")
+  } else
+  {
+  xdg <- Sys.getenv("XDG_CONFIG_HOME", unset="")
+  if(!nzchar(xdg)) xdg <- "~/.config"
+  kdir <- file.path(xdg, "rstudio", "keybindings")
+  }
+p1 <- file.path(kdir, "rstudio_bindings.json")
+p2 <- file.path(kdir, "addins.json")
 
 # Ask permission
 message("setKeyboardBindings wants to write the files:\n", p1, "\n", p2,
@@ -37,7 +41,7 @@ replaceFile <- function(fn)
   {
   if(!file.exists(fn)) return(fn)
   newname <- berryFunctions::newFilename(fn, quiet=TRUE)
-  file.rename(fn, newname)
+  if(!file.rename(fn, newname)) stop("Could not back up existing file: ", fn)
   message("Existing file was renamed to ", newname)
   return(fn)
   }
