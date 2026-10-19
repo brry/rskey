@@ -9,3 +9,4 @@
 #man/bknit2pdf.Rd
 ^\.positai$
 ^\.claude$
+^\.posit/assistant$

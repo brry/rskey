@@ -15,11 +15,13 @@ setKeyboardBindings <- function(
   )
 {
 # Set paths
-p1 <- "~/.config/rstudio/"
-if(.Platform$OS.type == "windows") p1 <- paste0(Sys.getenv("APPDATA"), "/RStudio/")
-p1 <- paste0(p1, "keybindings/rstudio_bindings.json")
-
-p2 <- "~/.R/rstudio/keybindings/addins.json"
+kdir <- 
+  if(.Platform$OS.type == "windows") 
+    paste0(Sys.getenv("APPDATA"), "/RStudio/keybindings/")
+  else
+    file.path(Sys.getenv("XDG_CONFIG_HOME", "~/.config"), "rstudio/keybindings/")
+p1 <- paste0(kdir, "rstudio_bindings.json")
+p2 <- paste0(kdir, "addins.json")
 
 # Ask permission
 message("setKeyboardBindings wants to write the files:\n", p1, "\n", p2,
@@ -28,10 +30,7 @@ ok <- readline("Can I write files as in the message? y/n: ")
 if(!tolower(substr(ok,1,1))=="y") stop("You did not give write access.")
 
 # Create dir if needed:
-d1 <- dirname(p1)
-if(!dir.exists(d1)) dir.create(d1, recursive=TRUE)
-d2 <- dirname(p2)
-if(!dir.exists(d2)) dir.create(d2, recursive=TRUE)
+if(!dir.exists(kdir)) dir.create(kdir, recursive=TRUE)
 
 # backup files if they exist:
 replaceFile <- function(fn)
@@ -72,7 +71,7 @@ cat('{
 }', sep="", file=p2)
 
 # Wrap up:
-if(openfolder) berryFunctions::openFile(dirname(c(p1,p2)))
+if(openfolder) berryFunctions::openFile(kdir)
 
 message("The keyboard shortcuts were successfully set.\n",
         "Please restart Rstudio now for the changes to take effect.")
