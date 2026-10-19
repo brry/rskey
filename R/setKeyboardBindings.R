@@ -49,14 +49,16 @@ p1 <- replaceFile(p1)
 p2 <- replaceFile(p2)
 
 # Set new entries:
+wrap_key <- if(Sys.info()[["sysname"]] == "Darwin") "Ctrl+W" else "Alt+W"
 cat('{
 "pasteLastYank": "",
 "setTerminalToCurrentDirectory": "",
 "setWorkingDirToActiveDoc": "Ctrl+H",
 "knitDocument": "",
 "roxygenizePackage": "",
-"quartoRenderDocument": "Alt+S"
-}', file=p1)
+"quartoRenderDocument": "Alt+S",
+"toggleSoftWrapMode": "',wrap_key,'"
+}', sep="", file=p1)
 mod_key <- if(Sys.info()[["sysname"]] == "Darwin") "Cmd" else "Ctrl"
 cat('{
 "rskey::str_addin": "F3",
