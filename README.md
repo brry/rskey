@@ -16,7 +16,7 @@ Rstudio addins to examine selected code in the Rstudio editor.
 install.packages("remotes")
 remotes::install_github("brry/rskey")
 rskey::setKeyboardBindings()
-# creates backup files if already present
+# moves existing shortcuts to backup file
 ```
 
 * `F3`: structure of an object - `str(selected_code)`
@@ -31,7 +31,7 @@ rskey::setKeyboardBindings()
 * `F12`: histogram of an object - `hist(selected_code, col="moccasin", breaks=50, las=1)`
 * *also sets:*
 * `CTRL/CMD` + `Y`: redo (by removing it from paste last yank)
-* `CTRL/CMD` + `H`: set working dir to active document
+* `CTRL` + `H`: set working dir to active document
 * `ALT` + `S`: quarto render document 
 * `ALT`+`W`, or `control`+`W`: toggle line wrapping (depending on OS)
 * `CTRL/CMD` + `Shift` + `Y`: score for [course](https://github.com/brry/fpsetup#exercises)
