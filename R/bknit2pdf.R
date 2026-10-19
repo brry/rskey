@@ -1,7 +1,7 @@
 #' @title pass Rnw document to knit2pdf
 #' @description pass the filename (selected window) to \code{knitPres::rnw2pdf}, see \url{https://github.com/brry/knitPres/}.
 #' Developed when MikTex and Rstudio stopped talking to each other. 
-#' Can be schorcut to e.g. CTRL + K
+#' Can be a shortcut to e.g. CTRL + K
 #' @return invisible charstring with file name
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, Jul 2021
 #' @importFrom rstudioapi documentSave getSourceEditorContext

@@ -52,7 +52,7 @@ out <- paste0(
 ' @author Berry Boessenkool, \\email{berry-b@@gmx.de}, ", date,
 "' @seealso \\code{\\link{help}}, \\code{graphics::\\link[graphics]{plot}}
 ' @keywords aplot
- @importFrom package fun1 fun2
+' @importFrom package fun1 fun2
 ' @export
 ' @examples
 '

@@ -1,8 +1,9 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-.Rprofile
+^\.Rprofile$
+^\.Rhistory$
 ^cran-comments\.md$
-.github/
+^\.github$
 #R/pycheck.R
 #man/pycheck.Rd
 #R/bknit2pdf.R

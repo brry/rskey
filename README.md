@@ -36,7 +36,7 @@ rskey::setKeyboardBindings()
 # also sets CTRL+Y for ReDo and CTRL+H for setWorkingDirToActiveDoc
 
 # or manually:
-# Rstudio - Tools - Modify Keyboard Shortcurts
+# Rstudio - Tools - Modify Keyboard Shortcuts
 # click on an addin shortcut field and press the desired key combination
 # (Restart Rstudio)
 ```
@@ -52,7 +52,7 @@ You can also explicitly request `funSource("somePackage::someFunction")`.
 This works even if the package is not installed (in which case you do need the quotation marks).
 
 #### open urls
-In the default browser, it the opens the first link if it exists, the second if not:  
+In the default browser, it opens the first link if it exists, the second if not:  
 
 * github.com/cran/`somePackage`/blob/master/R/`someFunction`.R (or `.r` file)
 * github.com/search?q=`someFunction` function repo:cran/`somePackage`+path:R

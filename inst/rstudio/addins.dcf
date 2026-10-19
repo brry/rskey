@@ -49,7 +49,7 @@ Description: hist(currently_marked_text)
 Binding: hist_addin
 Interactive: true
 
-Name: F13 unique of an object
+Name: unique values
 Description: unique(currently_marked_text)
 Binding: unique_addin
 Interactive: true
