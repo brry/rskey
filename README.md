@@ -7,40 +7,43 @@
 ### rstudio addins for Keyboard shortcuts
 
 Rstudio addins to examine selected code in the Rstudio editor.  
-*Berry Boessenkool (<berry-b@gmx.de>), May 2017, with `selectobject` code idea from
-digital-dharma/RStudioAddIns).*
+*Berry Boessenkool (<berry-b@gmx.de>), 2017-2026*
 
-I find it very useful to bind the addins to keyboard shortcuts like this (and
-[label](https://github.com/brry/rskey/raw/master/inst/keyboardRlabels.ods)
-the keyboard):
 
-* F3 - structure of an object - `str(selected_code)`
-* F4 - head of an object - `head(selected_code)`
-* F5 - tail of an object - `tail(selected_code)`
-* F6 - View an object - `View(selected_code)`
-* F7 - funSource of an object - `funSource(selected_code)`
-* F8 - summary of an object - `summary(selected_code)`
-* F9 - dim of an object - `dim(selected_code)`
-* F10 - class of an object - `class(selected_code)`
-* F11 - plot an object - `plot(selected_code, las=1)`
-* F12 - histogram of an object - `hist(selected_code, col="moccasin", breaks=50, las=1)`
-
-To use such keyboard shortcuts, follow these instructions:
+### Quick setup
 
 ```R
-if(!requireNamespace("remotes")) install.packages("remotes")
+install.packages("remotes")
 remotes::install_github("brry/rskey")
-
-# either set all bindings:
 rskey::setKeyboardBindings()
-# also sets CTRL+Y for ReDo and CTRL+H for setWorkingDirToActiveDoc
-
-# or manually:
-# Rstudio - Tools - Modify Keyboard Shortcuts
-# click on an addin shortcut field and press the desired key combination
-# (Restart Rstudio)
 ```
 
+* `F3`: structure of an object - `str(selected_code)`
+* `F4`: head of an object - `head(selected_code)`
+* `F5`: tail of an object - `tail(selected_code)`
+* `F6`: View an object - `View(selected_code)`
+* `F7`: funSource of an object - `funSource(selected_code)`
+* `F8`: summary of an object - `summary(selected_code)`
+* `F9`: dim of an object - `dim(selected_code)`
+* `F10`: class of an object - `class(selected_code)`
+* `F11`: plot an object - `plot(selected_code, las=1)`
+* `F12`: histogram of an object - `hist(selected_code, col="moccasin", breaks=50, las=1)`
+* *also sets:*
+* `CTRL/CMD` + `Y`: redo (by removing it from paste last yank)
+* `CTRL/CMD` + `H`: set working dir to active document
+* `ALT` + `S`: quarto render document 
+* `ALT`+`W`, or `control`+`W`: toggle line wrapping
+* `CTRL/CMD` + `Shift` + `Y`: score for [course](https://github.com/brry/fpsetup#exercises)
+* *for my convenience also sets:*
+* `CTRL/CMD` + `R`: add `\rcode{text}` around text in an Rnw document
+* `CTRL/CMD` + `K`: knit Rnw file to pdf rskey::bknit2pdf (**remove if unwanted**)
+
+selectively (un)set some manually:
+
+- Rstudio - Tools - Modify Keyboard Shortcuts
+- click on an addin shortcut field and press the desired key combination
+
+[label](https://github.com/brry/rskey/raw/master/inst/keyboardRlabels.ods) the keyboard if wanted :)
 
 ### funSource
 `funSource` provides an easy option to open the source code of a function in a browser window.  
@@ -67,7 +70,8 @@ Any idea to solve this kind of limitation is welcome!
 
 #### origin
 `funSource` is imported from
-[berryFunctions](https://github.com/brry/berryFunctions/blob/master/R/funSource.R).
+[berryFunctions](https://github.com/brry/berryFunctions/blob/master/R/funSource.R).  
+The `selectobject` code idea is from digital-dharma/RStudioAddIns).
 
 #### examples
 Examples on links opened by `funSource`:
