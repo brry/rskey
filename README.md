@@ -32,9 +32,8 @@ rskey::setKeyboardBindings()
 * *also sets:*
 * `CTRL/CMD` + `Y`: redo (by removing it from paste last yank)
 * `CTRL` + `H`: set working dir to active document
-* `ALT` + `S`: quarto render document 
 * `ALT`+`W`, or `control`+`W`: toggle line wrapping (depending on OS)
-* `CTRL/CMD` + `Shift` + `Y`: score for [course](https://github.com/brry/fpsetup#exercises)
+* `ALT` + `S`: score for [course](https://github.com/brry/fpsetup#exercises)
 * *for my convenience sets:*
 * `CTRL/CMD` + `R`: add `\rcode{text}` around text in an Rnw document
 * `CTRL/CMD` + `K`: knit Rnw file to pdf rskey::bknit2pdf (**set to knitDocument if wanted**)

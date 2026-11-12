@@ -55,7 +55,6 @@ cat('{
 "setWorkingDirToActiveDoc": "Ctrl+H",
 "knitDocument": "",
 "roxygenizePackage": "",
-"quartoRenderDocument": "Alt+S",
 "toggleSoftWrapMode": "',wrap_key,'"
 }', sep="", file=p1)
 mod_key <- if(Sys.info()[["sysname"]] == "Darwin") "Cmd" else "Ctrl"
@@ -72,7 +71,7 @@ cat('{
 "rskey::hist_addin": "F12",
 "rskey::rcode": "',mod_key,'+R",
 "rskey::bknit2pdf": "',mod_key,'+K",
-"rskey::score": "',mod_key,'+Shift+Y"
+"rskey::score": "Alt+S"
 }', sep="", file=p2)
 
 # Wrap up:
