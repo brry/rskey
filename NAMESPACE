@@ -28,6 +28,7 @@ importFrom(graphics,
   hist,
   plot
 )
+importFrom(miniUI,miniPage)
 importFrom(rstudioapi,
   documentSave,
   getActiveDocumentContext,

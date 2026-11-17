@@ -5,6 +5,7 @@
 #' @author Berry Boessenkool, \email{berry-b@@gmx.de}, Jan 2019, May 2026
 #' @seealso \code{\link{addins}}
 #' @importFrom berryFunctions newFilename openFile
+#' @importFrom miniUI miniPage
 #' @export
 #' @param openfolder      Logical: Open folders after writing the files?
 #'                        Uses \code{berryFunctions::\link[berryFunctions]{openFile}()}. DEFAULT: FALSE
