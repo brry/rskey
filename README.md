@@ -33,6 +33,7 @@ rskey::setKeyboardBindings()
 * `CTRL/CMD` + `Y`: redo (by removing it from paste last yank)
 * `CTRL` + `H`: set working dir to active document
 * `ALT`+`W`, or `control`+`W`: toggle line wrapping (depending on OS)
+* `ALT`+`H`, or `CMD`+`Shift`+`H`: toggle hidden files in the Files pane (depending on OS)
 * `ALT` + `S`: score for [course](https://github.com/brry/fpsetup#exercises)
 * *for my convenience sets:*
 * `CTRL/CMD` + `R`: add `\rcode{text}` around text in an Rnw document

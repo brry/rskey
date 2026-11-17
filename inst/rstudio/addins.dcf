@@ -84,3 +84,8 @@ Description: score FP exercise
 Binding: score
 Interactive: true
 
+Name: toggle hidden files
+Description: toggle visibility of hidden files in the Files pane
+Binding: toggleHiddenFiles
+Interactive: false
+

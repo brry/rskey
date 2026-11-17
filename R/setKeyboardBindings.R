@@ -59,6 +59,7 @@ cat('{
 "toggleSoftWrapMode": "',wrap_key,'"
 }', sep="", file=p1)
 mod_key <- if(Sys.info()[["sysname"]] == "Darwin") "Cmd" else "Ctrl"
+hidden_key <- if(Sys.info()[["sysname"]] == "Darwin") "Cmd+Shift+H" else "Alt+H"
 cat('{
 "rskey::str_addin": "F3",
 "rskey::head_addin": "F4",
@@ -72,7 +73,8 @@ cat('{
 "rskey::hist_addin": "F12",
 "rskey::rcode": "',mod_key,'+R",
 "rskey::bknit2pdf": "',mod_key,'+K",
-"rskey::score": "Alt+S"
+"rskey::score": "Alt+S",
+"rskey::toggleHiddenFiles": "',hidden_key,'"
 }', sep="", file=p2)
 
 # Wrap up:

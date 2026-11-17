@@ -17,6 +17,7 @@ export(setKeyboardBindings)
 export(str_addin)
 export(summary_addin)
 export(tail_addin)
+export(toggleHiddenFiles)
 export(umlaut2ascii)
 export(unique_addin)
 importFrom(berryFunctions,
